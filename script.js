@@ -18,6 +18,10 @@ const smallScreenNavIcons = smallScreenNavigation.querySelectorAll('.tiny-naviga
 
 const myselfImage = document.querySelector('.my-image img');
 
+//setting viewport height for compatibility purposes of non-vh browsers
+let viewPortHeight = window.innerHeight;
+allItemsContainer.style.setProperty('--viewHeight', viewPortHeight + 'px');
+
 //setting the bottom value of the downward floating arrow animation
 let headerHeight = getComputedStyle(headerContainer).height.replace('px', '');
 let arrowDownIconSiblingHeight = getComputedStyle(arrowDownIconSibling).height.replace('px', '');
@@ -45,7 +49,7 @@ navIcons.forEach((navIcon, index) => {
             // location.href = '#home';
         });
     }
-    if(index == 1) {
+    if(index == 1) {;
         navIcons[index].addEventListener('click', () => {
             section1.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
         });
@@ -56,8 +60,11 @@ navIcons.forEach((navIcon, index) => {
         });
     }
 });
+let width;
 iconsContainer.addEventListener('mouseover', () => {
-    navTray.style.width = 'clamp(300px, 30vw, 500px)';
+    width = (window.innerWidth * 0.3);
+    console.log(width);
+    navTray.style.width = width + 'px';//; clamp has compat issues
     getComputedStyle(navTray).width;
     navTrayNav.style.width = '100%';
     navTrayUl.style.width = '100%';
@@ -65,7 +72,10 @@ iconsContainer.addEventListener('mouseover', () => {
 });
 iconsContainer.addEventListener('mouseleave', () => {
     navTray.style.width = '5rem';
-    iconsContainer.style.width = '5rem';
+    getComputedStyle(navTray).width;
+    navTrayNav.style.width = '100%';
+    navTrayUl.style.width = '100%';
+    iconsContainer.style.width = '100%';
 });
 
 //giving action to the small screen icons
@@ -90,7 +100,8 @@ for(const[index, icon] of smallScreenNavIcons.entries()){
 //setting navigation pane to stick when necessary
 const options = {
     root: allItemsContainer,
-    threshold: 0
+    threshold: 0,
+    rootMargin: "0px"
 }
 let target = headerContainer;
 let observer = new IntersectionObserver((entries) => {
