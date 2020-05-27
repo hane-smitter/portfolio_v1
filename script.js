@@ -134,39 +134,23 @@ const smallScreenObserver = new IntersectionObserver((entries) => {
 }, options);
 
 //checking whether screen is below 650px or above
-if(window.innerWidth > 650) {
-    atLargeScreen();
-} else {
-    atSmallScreen();
+onload = () => {
+    if(window.innerWidth > 650) {
+        atLargeScreen();
+    } else {
+        atSmallScreen();
+        mailBoxPlaceHolders475Sceen();
+    }
 }
 //also check when resizing
 onresize = () => {
     if(window.innerWidth > 650) {
         atLargeScreen();
+        mailBoxPlaceHolders475Sceen();
     }else {
         mailBoxPlaceHolders475Sceen();
         atSmallScreen();
     }
-}
-function atSmallScreen () {
-    arrowDownIcon.classList.remove('animate');
-    arrowDownIcon.classList.add('tiny-effect');
-    navTray.classList.remove('stick');
-    navTray.classList.add('hide');
-    observer.unobserve(target);
-    smallScreenObserver.observe(target);
-    
-    myselfImage.classList.remove('blur-image');
-}
-function atLargeScreen () {
-    arrowDownIcon.classList.remove('tiny-effect');
-    arrowDownIcon.classList.add('animate');
-    navTray.classList.remove('hide');
-    smallScreenNavigation.classList.remove('dock-bottom');
-    smallScreenObserver.unobserve(target);
-    observer.observe(target);
-    
-    myselfImage.classList.add('blur-image');
 }
 
 //lazy load about section
@@ -199,6 +183,27 @@ observer2.observe(target2);
 
 
 //function definitions
+function atSmallScreen () {
+    arrowDownIcon.classList.remove('animate');
+    arrowDownIcon.classList.add('tiny-effect');
+    navTray.classList.remove('stick');
+    navTray.classList.add('hide');
+    observer.unobserve(target);
+    smallScreenObserver.observe(target);
+    
+    myselfImage.classList.remove('blur-image');
+}
+function atLargeScreen () {
+    arrowDownIcon.classList.remove('tiny-effect');
+    arrowDownIcon.classList.add('animate');
+    navTray.classList.remove('hide');
+    smallScreenNavigation.classList.remove('dock-bottom');
+    smallScreenObserver.unobserve(target);
+    observer.observe(target);
+    
+    myselfImage.classList.add('blur-image');
+}
+
 function mailBoxPlaceHolders475Sceen() {
     //putting mailBox placeholders on inputs at smaller screens(475px)
     if(window.innerWidth < 475) {
@@ -213,6 +218,11 @@ function mailBoxPlaceHolders475Sceen() {
         }
         let messagePlaceHolder = emailBoxTextArea.dataset.name;
         emailBoxTextArea.setAttribute('placeHolder', messagePlaceHolder);
+    } else {
+        for(const[i, input] of emailBoxInputs.entries()){
+            input.setAttribute('placeholder', '');
+        }
+        emailBoxTextArea.setAttribute('placeHolder', '');
     }
 }
 function align() {

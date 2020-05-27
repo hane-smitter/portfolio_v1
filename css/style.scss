@@ -11,8 +11,8 @@
 :root {
     font-size: 16px;
     
-    --h1_fs: min(max(6vw, 4rem), 4rem);
-    --h2_fs: min(max(4vw, 1.2rem), 2rem);
+    --h1_fs: 4rem;
+    --h2_fs: 1.2rem;
     --h1_fw: 500;
     --h2_fw: 400;
     --arrow_fs: clamp(4rem, 7vw, 5rem);
@@ -353,7 +353,6 @@ body {
         text-transform: uppercase;
         font-family: "Booter - Zero Zero", sans-serif;
         font-size: 2.6rem;
-        font-size: var(--h2_fs);
         font-weight: var(--h2_fw);
         text-shadow: -10px, -10px, 15px var(--shadow-color);
     }
@@ -376,7 +375,9 @@ body {
 }
 .my-image div {
     width: 100%;
-    height: 65%;
+    height: var(--width);
+    min-height: 200px;
+    max-height: 30rem;
     padding: 3px;
     border-radius: 4px;
     background-color: #444;
@@ -450,11 +451,12 @@ body {
         & .email-info {
             color: #007eab;
             font-family: sans-serif;
-            font-size: 14px;
+            font-size: 1rem;
         }
         & p.email-info {
             text-align: center;
             margin: 15px 0;
+            font-size: 1.1rem;
         }
         & label.email-info {
             display: inline-block;
@@ -464,7 +466,6 @@ body {
         & .credentials {
             margin: 10px auto;
             max-width: 550px;
-            min-width: 450px;
             height: 40px;
             display: flex;
             justify-content: flex-start;
@@ -479,43 +480,47 @@ body {
             text-align: center;
             font-family: arial;
             color: #fefe;
-            font-size: 16px;
             background-color: transparent;
             border-bottom: 3px solid #000;
         }
         & input:focus:not(:valid) {
-            outline: red;
-            box-shadow: inset 0 0 10px 2px red;
+            box-shadow: inset 0 0 5px 1px red;
         }
         & textarea {
             background-color: #353b48;
             color: #fefe;
-            font-family: arial;
+            font-family: "montserrat",sans-serif;
+            border: none;
+            opacity: .9;
+            box-shadow: 0 0 9px;
         }
         & .user-feed {
+            font-size: 1rem;
             margin: 0 auto;
-            width: clamp(200px, 50%, 350px);
             padding: 5px;
         }
         div[data-netlify-recaptcha] {
             margin: 0 auto;
+            color: #353b48 ;
+            background-color: #fefe;
+            font-family: sans-serif;
         }
         & .submit {
-            width: 200px;
-            padding: 10px;
+            padding: 10px 20px;
             display:block;
-            color: #333;
-            background-color: wheat;
+            color: wheat;
+            background: transparent;
             margin: 20px auto;
-            border-radius: 10px;
+            border: 2px solid #222;
+            border-radius: 5px;
             font-size: 17px;
             letter-spacing: 1.1px;
             font-weight: 600;
-            border: none;
             cursor: pointer;
+            transition: background, color 350ms ease-in-out;
         }
         & .submit:hover {
-            background-color: rgb(158, 141, 109);
+            background: rgb(158, 141, 109);
             color: #fefe;
         }
     }
@@ -597,6 +602,15 @@ body {
             width: 100%;
             height: 100%;
         }
+        & .footer-text {
+            font-size: 0.93rem;
+            color: #333;
+            align-self: end;
+        }
+        & .footer-text span {
+            font-family: arial;
+            color: #8e44ad;
+        }
     }
 }
 
@@ -673,6 +687,9 @@ body {
 
 //response calculations for different widths
 @media only screen and (max-width: 650px) {
+    :root {
+        font-size: 14px;
+    }
     .background {
         height: 700px;
     }
@@ -696,14 +713,23 @@ body {
     .section-three .section-three__footer {
         margin-bottom: 4.1rem;
     }
+    .my-image div {
+        max-height: 20rem;
+    }
 }
 @media only screen and (max-width: 575px) {
+    :root {
+        font-size: 13px;
+    }
     .section-three__content .email-box {
         max-width: 35rem;
         width: var(--width);
     }
 }
 @media only screen and (max-width: 475px) {
+    :root {
+        font-size: 11px;
+    }
     .background {
         height: 1080px;
     }
@@ -712,7 +738,7 @@ body {
         width: var(--width);
     }
     .section-three__content .email-box {
-        max-width: 28rem;
+        max-width: 18rem;
         width: var(--width);
         background-color: rgba(31, 28, 28, 0.9);
     }
