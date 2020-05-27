@@ -17,6 +17,9 @@
     --h2_fw: 400;
     --arrow_fs: clamp(4rem, 7vw, 5rem);
 }
+body {
+    overflow: hidden;
+}
 ::-webkit-scrollbar {
     width: 1%;
 }
@@ -49,6 +52,8 @@
     position: absolute;
     display: grid;
     place-items: center;
+    align-items: center;
+    justify-items: center;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
     background-color: #353b48;
@@ -76,6 +81,8 @@
     padding: 20px;
     display: grid;
     place-items: center;
+    align-items: center;
+    justify-items: center;
     grid-auto-rows: min-content;
     place-content: center;
     color: white;
@@ -89,6 +96,7 @@
     scroll-snap-align: start;
 
     &__text {
+        font-size: 4rem;
         font-size: var(--h1_fs);
         font-weight: var(--h1_fw);
         font-family: sans-serif, arial;
@@ -245,6 +253,8 @@
         text-decoration: none;
         display: grid;
         place-items: center;
+        align-items: center;
+        justify-items: center;
         cursor: pointer;
     }
     &__navigation a img {
@@ -330,6 +340,8 @@
         box-shadow: inset 0 0 10px 7vw var(--shadow-color);
         display: grid;
         place-items: center;
+        align-items: center;
+        justify-items: center;
     }
     
     & .content .info {
@@ -405,6 +417,7 @@
     &__content {
         & .contact-heading {
             text-align: center;
+            font-size: 4rem;
             font-size: var(--h1_fs);
             font-weight: var(--h1_fw);
             text-transform: uppercase;
@@ -484,6 +497,9 @@
             width: clamp(200px, 50%, 350px);
             padding: 5px;
         }
+        div[data-netlify-recaptcha] {
+            margin: 0 auto;
+        }
         & .submit {
             width: 200px;
             padding: 10px;
@@ -507,6 +523,8 @@
     &__footer {
         display: grid;
         place-items: center;
+        align-items: center;
+        justify-items: center;
         margin-top: auto;
         height: 200px;
         perspective: 500px;
@@ -536,6 +554,8 @@
         & .front {
             display: grid;
             place-items: center;
+            align-items: center;
+            justify-items: center;
             color: #333;
             font-size: 20px;
             font-family: sans-serif;
@@ -545,12 +565,16 @@
             display: grid;
             grid-auto-flow: column;
             place-items: center;
+            align-items: center;
+            justify-items: center;
             transform: rotateY(-270deg) translateX(100px);
             transform-origin: right;
         }
         & .social-link {
             display: grid;
             place-items: center;
+            align-items: center;
+            justify-items: center;
             width: 40px;
             height: 40px;
             padding: 2px;
@@ -637,6 +661,7 @@
 
 .hide {
     visibility: hidden;
+    position: absolute;
 }
 .dock-bottom {
     position: fixed;
@@ -655,9 +680,6 @@
         height: 330px;
         padding: 5px;
     }
-    .section-three {
-        margin-bottom: 5rem;
-    }
     .social {
         transform: rotateY(-90deg);
     }
@@ -670,6 +692,9 @@
     .section-three__content .email-box {
         max-width: 38rem;
         width: var(--width);
+    }
+    .section-three .section-three__footer {
+        margin-bottom: 4.1rem;
     }
 }
 @media only screen and (max-width: 575px) {
@@ -689,5 +714,9 @@
     .section-three__content .email-box {
         max-width: 28rem;
         width: var(--width);
+        background-color: rgba(31, 28, 28, 0.9);
+    }
+    .section-three__content .email-box label.email-info {
+        display: none;
     }
 }

@@ -13,6 +13,10 @@ let navIcons = document.querySelectorAll('#main__navigation li');
 let section1 = document.getElementsByClassName('section-one')[0];
 let section3 = document.getElementsByClassName('section-three')[0];
 
+const emailBox = section3.querySelector('.email-box');
+const emailBoxInputs = emailBox.querySelectorAll('input');
+const emailBoxTextArea = emailBox.querySelector('#msg');
+
 let smallScreenNavigation = allItemsContainer.querySelector('.tiny-navigation');
 const smallScreenNavIcons = smallScreenNavigation.querySelectorAll('.tiny-navigation li');
 
@@ -27,6 +31,8 @@ let headerHeight = getComputedStyle(headerContainer).height.replace('px', '');
 let arrowDownIconSiblingHeight = getComputedStyle(arrowDownIconSibling).height.replace('px', '');
 let arrowDownIconSpace;
 align();
+
+
 
 window.onresize = () => {
     headerHeight = getComputedStyle(headerContainer).height.replace('px', '');
@@ -137,7 +143,8 @@ if(window.innerWidth > 650) {
 onresize = () => {
     if(window.innerWidth > 650) {
         atLargeScreen();
-    } else {
+    }else {
+        mailBoxPlaceHolders475Sceen();
         atSmallScreen();
     }
 }
@@ -189,7 +196,25 @@ let observer2 = new IntersectionObserver((entries) => {
 }, options2);
 observer2.observe(target2);
 
+
+
 //function definitions
+function mailBoxPlaceHolders475Sceen() {
+    //putting mailBox placeholders on inputs at smaller screens(475px)
+    if(window.innerWidth < 475) {
+            //setting placeholder on small screen
+        for(const[i, input] of emailBoxInputs.entries()){
+            let placeholder = input.dataset.name;
+            if(i == 0) {
+                input.setAttribute('placeholder', placeholder);
+            } else if(i == 1) {
+                input.setAttribute('placeholder', placeholder);
+            }
+        }
+        let messagePlaceHolder = emailBoxTextArea.dataset.name;
+        emailBoxTextArea.setAttribute('placeHolder', messagePlaceHolder);
+    }
+}
 function align() {
     arrowDownIconSpace = +headerHeight - +arrowDownIconSiblingHeight;
     arrowDownIcon.style.setProperty('--siblings-height', (0.1 * arrowDownIconSpace) + 'px');
