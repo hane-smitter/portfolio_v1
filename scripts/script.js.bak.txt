@@ -134,6 +134,7 @@ onload = () => {
         atLargeScreen();
     } else {
         atSmallScreen();
+        // mailBoxPlaceHolders475Sceen();
     }
 }
 //also check when resizing
@@ -147,7 +148,9 @@ onresize = () => {
 
     if(window.innerWidth > 650) {
         atLargeScreen();
+        // mailBoxPlaceHolders475Sceen();
     }else {
+        // mailBoxPlaceHolders475Sceen();
         atSmallScreen();
     }
 }
@@ -179,6 +182,22 @@ let observer2 = new IntersectionObserver((entries) => {
 }, options2);
 observer2.observe(target2);
 
+// //checking to find if recaptcha was clicked
+// let recaptchaClick = 0;
+// recaptchaItem.onclick = () => {
+//     ++recaptchaClick;
+// }
+// emailForm.addEventListener('submit', (event) => {
+//     if(!recaptchaClick) {
+//         recaptchaItem.classList.add('unchecked');
+//         alert('Please do action for the highlighted!');
+//         return event.preventDefault();
+//     }
+//     recaptchaItem.classList.remove('unchecked');
+//     emailForm.submit();
+// });
+
+
 //function definitions
 function atSmallScreen () {
     arrowDownIcon.classList.remove('animate');
@@ -199,6 +218,28 @@ function atLargeScreen () {
     observer.observe(target);
     
     myselfImage.classList.add('blur-image');
+}
+
+function mailBoxPlaceHolders475Sceen() {
+    //putting mailBox placeholders on inputs at smaller screens(475px)
+    if(window.innerWidth < 475) {
+            //setting placeholder on small screen
+        for(const[i, input] of emailBoxInputs.entries()){
+            let placeholder = input.dataset.name;
+            if(i == 0) {
+                input.setAttribute('placeholder', placeholder);
+            } else if(i == 1) {
+                input.setAttribute('placeholder', placeholder);
+            }
+        }
+        let messagePlaceHolder = emailBoxTextArea.dataset.name;
+        emailBoxTextArea.setAttribute('placeHolder', messagePlaceHolder);
+    } else {
+        for(const[i, input] of emailBoxInputs.entries()){
+            input.setAttribute('placeholder', '');
+        }
+        emailBoxTextArea.setAttribute('placeHolder', '');
+    }
 }
 function align() {
     arrowDownIconSpace = +headerHeight - +arrowDownIconSiblingHeight;
