@@ -1,25 +1,19 @@
 //(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i).test(navigator.userAgent)- detecting a phone browser
 var allItemsContainer = document.getElementsByClassName('container')[0];
 
-let headerContainer = document.querySelector('.header');
+var headerContainer = document.querySelector('.header');
 let arrowDownIconSibling = document.querySelector('.header div');
 var arrowDownIcon = document.querySelector('.header__scroll-icon');
 
 let navTray = document.querySelector('#main__navigation');
 let navTrayNav = document.querySelector('#main__navigation nav');
 let navTrayUl = document.querySelector('#main__navigation ul');
-let iconsContainer = document.querySelector('[data-section-links]');
-let navIcons = document.querySelectorAll('#main__navigation li');
+let iconsContainer = document.querySelector('[data-section-links]');//div
+let navIconsLiContainer = document.querySelectorAll('#main__navigation li');
+let navIcons = document.querySelectorAll('#main__navigation li img');
 
 let section1 = document.getElementsByClassName('section-one')[0];
 let section3 = document.getElementsByClassName('section-three')[0];
-
-// const emailForm = document['forms']["portfolio-contact"];
-// const emailBox = section3.querySelector('.email-box');
-// const emailBoxInputs = emailBox.querySelectorAll('input');
-// const emailBoxTextArea = emailBox.querySelector('#msg');
-// const recaptchaItem = emailBox.querySelector('div[data-netlify-recaptcha]');
-// const submitMailBtn = emailBox.getElementsByClassName('submit')[0];
 
 let smallScreenNavigation = allItemsContainer.querySelector('.tiny-navigation');
 const smallScreenNavIcons = smallScreenNavigation.querySelectorAll('.tiny-navigation li');
@@ -28,6 +22,7 @@ const myselfImage = document.querySelector('.my-image img');
 
 //setting viewport height for compatibility purposes of non-vh browsers
 let viewPortHeight = window.innerHeight;
+let viewPortWidth = window.innerWidth;
 allItemsContainer.style.setProperty('--viewHeight', viewPortHeight + 'px');
 
 //setting the bottom value of the downward floating arrow animation
@@ -43,29 +38,33 @@ arrowDownIcon.onclick = () => {
 }
 
 //setting hover effect on the display menu icons
-navIcons.forEach((navIcon, index) => {
+navIconsLiContainer.forEach((navIcon, index) => {
     if(index == 0) {
-        navIcons[index].addEventListener('click', () => {
+        navIconsLiContainer[index].addEventListener('click', () => {
             headerContainer.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
             // location.href = '#';
             // location.href = '#home';
         });
     }
     if(index == 1) {;
-        navIcons[index].addEventListener('click', () => {
+        navIconsLiContainer[index].addEventListener('click', () => {
             section1.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
         });
     }
     if(index == 2) {
-        navIcons[index].addEventListener('click', () => {
+        navIconsLiContainer[index].addEventListener('click', () => {
             section3.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
         });
     }
 });
-let width;
+let navTrayWidth = (viewPortWidth * 0.3);
+console.log(navTrayWidth);
+navIconsLiContainer.forEach((liItem) => {
+    liItem.style.width = navTrayWidth + "px";
+    console.log(liItem);
+})
 iconsContainer.addEventListener('mouseover', () => {
-    width = (window.innerWidth * 0.3);
-    navTray.style.width = width + 'px';//; clamp has compat issues
+    navTray.style.width = navTrayWidth + 'px';//; clamp has compat issues
     getComputedStyle(navTray).width;
     navTrayNav.style.width = '100%';
     navTrayUl.style.width = '100%';
@@ -109,8 +108,11 @@ let observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if(entry.isIntersecting == true) {
             arrowDownIcon.classList.add('animate');
-            return navTray.classList.remove('stick');
+            navTray.classList.remove('stick');
+            loop();
+            return
         }
+        noLoop();
         arrowDownIcon.classList.remove('animate');
         navTray.classList.add('stick');
     });
@@ -139,6 +141,7 @@ onload = () => {
 //also check when resizing
 onresize = () => {
     viewPortHeight = window.innerHeight;
+    viewPortWidth = window,innerWidth;
     allItemsContainer.style.setProperty('--viewHeight', viewPortHeight + 'px');
 
     headerHeight = getComputedStyle(headerContainer).height.replace('px', '');

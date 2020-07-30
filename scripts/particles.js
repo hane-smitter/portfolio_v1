@@ -1,7 +1,7 @@
 const particles = [];
 let z;
 function setup() {
-  createCanvas(window.innerWidth, window.innerHeight);
+  createCanvas(windowWidth, window.innerHeight);
   const particlesLength = Math.floor(window.innerWidth / 10);
 
   for(let i = 0; i < particlesLength; i++) {
@@ -16,6 +16,10 @@ function draw() {
     particles[i].checkParticle(particles.slice(i));
   }
 
+  console.log('still running!!');
+}
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 class Particle {
   constructor() {
