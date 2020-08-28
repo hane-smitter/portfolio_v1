@@ -1,11 +1,12 @@
 const particles = [];
 let z;
 function setup() {
-  createCanvas(windowWidth, window.innerHeight);
+createCanvas(windowWidth, windowHeight);
   const particlesLength = Math.floor(window.innerWidth / 10);
 
   for(let i = 0; i < particlesLength; i++) {
-    particles.push(new Particle());
+console.log('particles length');
+particles.push(new Particle());
   }
 }
 function draw() {

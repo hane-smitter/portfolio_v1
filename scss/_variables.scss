@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "Booter - Zero Zero";
+    src:    url("../Fonts/Booter - Zero Zero.woff") format("woff"),
+            url("../Fonts/Booter - Zero Zero.woff2") format("woff2");
+}
+
+$viewPortHeight: 100vh;
+$lazyLoad-speed: all 1s ease-out;
+
+$big-title: 4rem;
+$h2_fs: 1.2rem;
+$h1_fw: 500;
+$h2_fw: 400;
+
+//font
+$primary-font   : sans-serif,Arial,Helvetica;
+$font           : "Booter - Zero Zero",sans-serif;
+//colors
+$primary-color  : #1345e6;
+$primary-color2 : #ed239f;
+$title-color    : #05364d;
+$text-color     : #797979;
+$nav-tray-color : #444;
+$pinky-white    : #fefe;
+$offwhite       : #f8faff;
+$white          : #fff;

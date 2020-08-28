@@ -8,7 +8,8 @@ var arrowDownIcon = document.querySelector('.header__scroll-icon');
 let navTray = document.querySelector('#main__navigation');
 let navTrayNav = document.querySelector('#main__navigation nav');
 let navTrayUl = document.querySelector('#main__navigation ul');
-let iconsContainer = document.querySelector('[data-section-links]');//div
+let navTraySpanLogo = document.querySelector('#main__navigation span');
+// let iconsContainer = document.querySelector('[data-section-links]');//div
 let navIconsLiContainer = document.querySelectorAll('#main__navigation li');
 let navIcons = document.querySelectorAll('#main__navigation li img');
 
@@ -18,12 +19,8 @@ let section3 = document.getElementsByClassName('section-three')[0];
 let smallScreenNavigation = allItemsContainer.querySelector('.tiny-navigation');
 const smallScreenNavIcons = smallScreenNavigation.querySelectorAll('.tiny-navigation li');
 
-const myselfImage = document.querySelector('.my-image img');
-
-//setting viewport height for compatibility purposes of non-vh browsers
 let viewPortHeight = window.innerHeight;
 let viewPortWidth = window.innerWidth;
-allItemsContainer.style.setProperty('--viewHeight', viewPortHeight + 'px');
 
 //setting the bottom value of the downward floating arrow animation
 let headerHeight = getComputedStyle(headerContainer).height.replace('px', '');
@@ -37,45 +34,40 @@ arrowDownIcon.onclick = () => {
     section1.scrollIntoView({behavior: "smooth", block: "start"});
 }
 
-//setting hover effect on the display menu icons
+//Adding click actions on the display menu icons
 navIconsLiContainer.forEach((navIcon, index) => {
     if(index == 0) {
-        navIconsLiContainer[index].addEventListener('click', () => {
+        navIcon.addEventListener('click', () => {
             headerContainer.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
             // location.href = '#';
             // location.href = '#home';
         });
     }
-    if(index == 1) {;
-        navIconsLiContainer[index].addEventListener('click', () => {
+    if(index == 1) {
+        navIcon.addEventListener('click', () => {
             section1.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
         });
     }
     if(index == 2) {
-        navIconsLiContainer[index].addEventListener('click', () => {
+        navIcon.addEventListener('click', () => {
             section3.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
         });
     }
 });
-let navTrayWidth = (viewPortWidth * 0.3);
-console.log(navTrayWidth);
-navIconsLiContainer.forEach((liItem) => {
-    liItem.style.width = navTrayWidth + "px";
-    console.log(liItem);
-})
-iconsContainer.addEventListener('mouseover', () => {
-    navTray.style.width = navTrayWidth + 'px';//; clamp has compat issues
+let navTrayWidth;
+navTrayUl.addEventListener('mouseover', () => {
+    navTray.style.width = navTrayWidth + 'px';
     getComputedStyle(navTray).width;
     navTrayNav.style.width = '100%';
     navTrayUl.style.width = '100%';
-    iconsContainer.style.width = '100%';
+    navTraySpanLogo.style.width = '100%';
 });
-iconsContainer.addEventListener('mouseleave', () => {
+navTrayUl.addEventListener('mouseleave', () => {
     navTray.style.width = '5rem';
     getComputedStyle(navTray).width;
     navTrayNav.style.width = '100%';
     navTrayUl.style.width = '100%';
-    iconsContainer.style.width = '100%';
+    navTraySpanLogo.style.width = '100%';
 });
 
 //giving action to the small screen icons
@@ -97,53 +89,24 @@ for(const[index, icon] of smallScreenNavIcons.entries()){
     }
 }
 
-//setting navigation pane to stick when necessary
-const options = {
-    root: allItemsContainer,
-    threshold: 0,
-    rootMargin: "0px"
-}
-let target = headerContainer;
-let observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if(entry.isIntersecting == true) {
-            arrowDownIcon.classList.add('animate');
-            navTray.classList.remove('stick');
-            loop();
-            return
-        }
-        noLoop();
-        arrowDownIcon.classList.remove('animate');
-        navTray.classList.add('stick');
-    });
-}, options);
-
-//small screen observer
-const smallScreenObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if(entry.isIntersecting == true) {
-            arrowDownIcon.classList.add('tiny-effect');
-            return smallScreenNavigation.classList.remove('dock-bottom');
-        }
-        arrowDownIcon.classList.add('tiny-effect');
-        smallScreenNavigation.classList.add('dock-bottom');
-    });
-}, options);
-
 //checking whether screen is below 650px or above 650px
 onload = () => {
+    navTrayWidth = (viewPortWidth * 0.3);
     if(window.innerWidth > 650) {
         atLargeScreen();
     } else {
         atSmallScreen();
     }
+    navIconsLiContainer.forEach((liItem) => {
+        liItem.style.width = navTrayWidth + "px";
+    });
 }
 //also check when resizing
 onresize = () => {
     viewPortHeight = window.innerHeight;
-    viewPortWidth = window,innerWidth;
-    allItemsContainer.style.setProperty('--viewHeight', viewPortHeight + 'px');
-
+    viewPortWidth = window.innerWidth;
+    navTrayWidth = (viewPortWidth * 0.3);
+    
     headerHeight = getComputedStyle(headerContainer).height.replace('px', '');
     arrowDownIconSiblingHeight = getComputedStyle(arrowDownIconSibling).height.replace('px', '');
     align();
@@ -153,34 +116,82 @@ onresize = () => {
     }else {
         atSmallScreen();
     }
+    navIconsLiContainer.forEach((liItem) => {
+        liItem.style.width = navTrayWidth + "px";
+    });
 }
 
-//lazy load about section
-let options2 = {
+//setting navigation pane to stick when necessary
+const options = {
     root: allItemsContainer,
-    threshold: [0.15, 0.30, 0.33]
+    threshold: 0.01
 }
-let target2 = section1;
-let ratio;
-let slideItem1 = section1.querySelector('.main__content-about');
-let slideItem2 = section1.querySelector('.background');
-let slideItem3 = section1.querySelector('.my-image');
-let observer2 = new IntersectionObserver((entries) => {
+let target = headerContainer;
+let observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        ratio = entry.intersectionRatio;
-        if(ratio >= 0.15) {
-            slideItem1.classList.add('slide-in');
+        if(entry.isIntersecting == true) {
+            navTray.classList.remove('stick');
+            loop();
+            return;
         }
-        if(ratio >= 0.30) {
-            slideItem2.classList.add('slide-in');
+        noLoop();
+        navTray.classList.add('stick');
+    });
+}, options);
+
+//small screen observer
+const smallScreenObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting == true) {
+            arrowDownIcon.classList.add('tiny-effect');
+            smallScreenNavigation.classList.remove('dock-bottom');
+            loop();
+            return;
         }
-        if(ratio >= 0.33) {
-            slideItem3.classList.add('slide-in');
-            stopObserver2();
+        noLoop();
+        arrowDownIcon.classList.add('tiny-effect');
+        smallScreenNavigation.classList.add('dock-bottom');
+    });
+}, options);
+
+//lazy load about section
+
+let settings = {
+    root: allItemsContainer,
+    threshold: 0.30
+}
+let $class_aboutMe_item = section1.querySelector('.about-me');
+let $class_goals_item = section1.querySelector('.goals');
+let $emailForm = document.forms['portfolio-contact'];
+
+let lazyloadObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+        if(entry.intersectionRatio >= 0.30) {
+            if(entry.target.childElementCount > 1) {
+                var children = entry.target.children;
+                for ( let child of children) {
+                    child.classList.add('slide-in');
+                }
+                observer.unobserve(entry.target);
+                return
+            }
+            entry.target.firstElementChild.classList.add('slide-in');
+            observer.unobserve(entry.target);
         }
     });
-}, options2);
-observer2.observe(target2);
+}, settings);
+lazyloadObserver.observe($class_aboutMe_item);
+lazyloadObserver.observe($class_goals_item);
+
+let emailSectionObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(( entry ) => {
+        if( entry.intersectionRatio >= 0.30 ) {
+            entry.target.style.transform = 'scale(1)';
+            observer.unobserve(entry.target);
+        }
+    });
+}, settings);
+emailSectionObserver.observe($emailForm);
 
 //function definitions
 function atSmallScreen () {
@@ -190,8 +201,6 @@ function atSmallScreen () {
     navTray.classList.add('hide');
     observer.unobserve(target);
     smallScreenObserver.observe(target);
-    
-    myselfImage.classList.remove('blur-image');
 }
 function atLargeScreen () {
     arrowDownIcon.classList.remove('tiny-effect');
@@ -200,13 +209,8 @@ function atLargeScreen () {
     smallScreenNavigation.classList.remove('dock-bottom');
     smallScreenObserver.unobserve(target);
     observer.observe(target);
-    
-    myselfImage.classList.add('blur-image');
 }
 function align() {
     arrowDownIconSpace = +headerHeight - +arrowDownIconSiblingHeight;
     arrowDownIcon.style.setProperty('--siblings-height', (0.1 * arrowDownIconSpace) + 'px');
-}
-function stopObserver2 () {
-    observer2.unobserve(target2);
 }
