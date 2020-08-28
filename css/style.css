@@ -458,7 +458,7 @@ main {
   width: 40%;
   margin-left: auto;
   align-self: center;
-  transition: all 1s ease-out;
+  transition: all 350ms ease-out;
 }
 
 @media screen and (max-width: 970px) {
@@ -485,6 +485,7 @@ main {
 
 .goals {
   min-height: 300px;
+  margin-bottom: 20px;
 }
 
 .goals .background {
@@ -604,7 +605,7 @@ main {
   padding: 20px;
   font-family: arial;
   transform: scale(0);
-  transition: all 1s ease-out;
+  transition: all 350ms ease-out;
 }
 
 .section-three__content .email-box h2 {
@@ -869,13 +870,13 @@ main {
 
 .slide-out-right {
   transform: translateX(-500px);
-  transition: all 1s ease-out;
+  transition: all 350ms ease-out;
   opacity: 0;
 }
 
 .slide-out-left {
   transform: translateX(500px);
-  transition: all 1s ease-out;
+  transition: all 350ms ease-out;
   opacity: 0;
 }
 
@@ -900,9 +901,6 @@ main {
 @media only screen and (max-width: 650px) {
   :root {
     font-size: 14px;
-  }
-  .goals {
-    height: 700px;
   }
   .background .content {
     height: 250px;
@@ -938,9 +936,6 @@ main {
 }
 
 @media only screen and (max-width: 475px) {
-  .goals {
-    height: 1080px;
-  }
   .section-three {
     padding: 0;
   }

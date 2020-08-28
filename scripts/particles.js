@@ -5,7 +5,6 @@ createCanvas(windowWidth, windowHeight);
   const particlesLength = Math.floor(window.innerWidth / 10);
 
   for(let i = 0; i < particlesLength; i++) {
-console.log('particles length');
 particles.push(new Particle());
   }
 }
@@ -16,8 +15,6 @@ function draw() {
     particles[i].draw();
     particles[i].checkParticle(particles.slice(i));
   }
-
-  console.log('still running!!');
 }
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);

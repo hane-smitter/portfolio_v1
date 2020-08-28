@@ -2,9 +2,6 @@
     :root {
         font-size: 14px;
     }
-    .goals {
-        height: 700px;
-    }
     .background .content {
         height: 250px;
         padding: 5px;
@@ -37,9 +34,6 @@
     }
 }
 @media only screen and (max-width: 475px) {
-    .goals {
-        height: 1080px;
-    }
     .section-three {
         padding: 0;
     }
