@@ -1,44 +1,3 @@
-@keyframes tiny-effect1 {
-    0% {
-        left: 10%;
-    }
-    100% {
-        left: 80%;
-    }
-}
-@keyframes tiny-effect2 {
-    0% {
-        right: 10%;
-    }
-    100% {
-        right: 80%;
-    }
-}
-.tiny-effect {
-    border: 4px solid $pinky-white;
-    border-radius: 5px;
-}
-.tiny-effect::before, .tiny-effect::after {
-    content: '';
-    display: block;
-    height: 4px;
-    width: 14px;
-    transform: skewX(50deg);
-    position: absolute;
-    background-color: rgba(20, 20, 20, 0.6);
-}
-.tiny-effect::before {
-    top: -4px;
-    left: 10%;
-    animation: tiny-effect1 800ms ease-out 250ms infinite alternate;
-}
-.tiny-effect::after {
-    bottom: -4px;
-    right: 10%;
-    animation: tiny-effect2 800ms ease-out 250ms infinite alternate;
-
-}
-
 .slide-out-right {
     transform: translateX(-500px);
     transition: $lazyLoad-speed;
@@ -55,7 +14,7 @@
 }
 
 .hide {
-    visibility: hidden;
+    display: none;
     position: absolute;
 }
 .dock-bottom {

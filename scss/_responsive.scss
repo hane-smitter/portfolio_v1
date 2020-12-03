@@ -1,3 +1,15 @@
+@media only screen and (max-width: 970px){
+    .section-one .about-me {
+        background-image: none;
+        div.about-me__info .sm-image {
+            display: block;
+        }
+        .about-me__image {
+            display: none;
+        }
+    }
+}
+
 @media only screen and (max-width: 650px) {
     :root {
         font-size: 14px;

@@ -19,6 +19,11 @@ function draw() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+/* function deviceTurned() {
+  if (turnAxis === 'X') {
+    resizeCanvas(windowHeight, windowWidth);
+  }
+} */
 class Particle {
   constructor() {
     //position

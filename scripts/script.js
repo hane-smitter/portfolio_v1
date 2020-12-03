@@ -132,9 +132,11 @@ let observer = new IntersectionObserver((entries) => {
         if(entry.isIntersecting == true) {
             navTray.classList.remove('stick');
             loop();
+            document.querySelector('.p5Canvas').classList.remove('hide');
             return;
         }
         noLoop();
+        document.querySelector('.p5Canvas').classList.add('hide');
         navTray.classList.add('stick');
     });
 }, options);
@@ -146,9 +148,11 @@ const smallScreenObserver = new IntersectionObserver((entries) => {
             arrowDownIcon.classList.add('tiny-effect');
             smallScreenNavigation.classList.remove('dock-bottom');
             loop();
+            document.querySelector('.p5Canvas').classList.remove('hide');
             return;
         }
         noLoop();
+        document.querySelector('.p5Canvas').classList.add('hide');
         arrowDownIcon.classList.add('tiny-effect');
         smallScreenNavigation.classList.add('dock-bottom');
     });
@@ -195,16 +199,12 @@ emailSectionObserver.observe($emailForm);
 
 //function definitions
 function atSmallScreen () {
-    arrowDownIcon.classList.remove('animate');
-    arrowDownIcon.classList.add('tiny-effect');
     navTray.classList.remove('stick');
     navTray.classList.add('hide');
     observer.unobserve(target);
     smallScreenObserver.observe(target);
 }
 function atLargeScreen () {
-    arrowDownIcon.classList.remove('tiny-effect');
-    arrowDownIcon.classList.add('animate');
     navTray.classList.remove('hide');
     smallScreenNavigation.classList.remove('dock-bottom');
     smallScreenObserver.unobserve(target);

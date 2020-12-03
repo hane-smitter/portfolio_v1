@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is my personal website. You can check me up to see what i do. You can reach out to me via my contacts displayed on the contact section. I'm looking forward to working with you so that together we can bring up something special.">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js" integrity="sha512-BdHyGtczsUoFcEma+MfXc71KJLv/cd+sUsUaYYf2mXpfG/PtBjNXsPo78+rxWjscxUYN2Qr2+DbeGGiJx81ifg==" crossorigin="anonymous"></script>
     <script src="/scripts/p5.min.js"></script>
-    <script src="/scripts/particles.js"></script>
-    <title>Zack</title>
+    <script src="/scripts/particles.js" async></script>
+    <title>Zack | my personal website</title>
 </head>
 <body>
     <div class="container">
@@ -19,9 +22,9 @@
         </nav>
         <header class="header" id="home">
             <div class="header__main">
-                <h3 class="header-greet color">Hello There !</h3>
-                <h1 class="header-name color">i am Zacky aduoli</h1>
-                <h5 class="header-about color">software developer that lives in the web</h5>
+                <h3 class="header-greet color">Hello There!</h3>
+                <h1 class="header-name color">I am Zacky aduoli.</h1>
+                <h5 class="header-about color">i'm a <span class="typed"></span></h5>
             </div>
             <span class="header__scroll-icon"><img src="/images/arrow-downwards.svg"></span>
         </header>
@@ -32,6 +35,9 @@
                     <div class="about-me__info slide-out-right">
                         <p>ABOUT ME</p>
                         <h3 class="about-me-subhead">Creative Web Developer</h3>
+                        <div class="sm-image">
+                            <img src="/images/dev.jpeg" alt="zack">
+                        </div>
                         <p class="about-me-text">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi pariatur ad, dignissimos error minus accusantium odit dicta placeat tempore explicabo animi aspernatur minima magni tenetur corporis repudiandae quisquam doloremque! Fugiat, consequatur ab ipsam fugit quo ut tenetur ipsa obcaecati id molestias, veritatis dignissimos, molestiae tempora voluptatum illo nam suscipit labore.
                         </p>
@@ -74,7 +80,7 @@
                   </svg>
                 <div class="section-three__content">
                     <h1 class="contact-heading">contact</h1>
-                    <p class="info-text" style="width: 100%; text-align: center;">Send me an email and together let's create something special !</p>
+                    <p class="info-text" style="width: 100%; text-align: center;">We're in this together<br>Contact me and let's create something special !</p>
                         <form method="POST" data-netlify = "true" name="portfolio-contact" class="email-box">
                             <div class="row100">
                                 <div class="col">
@@ -133,9 +139,9 @@
                     <div class="social">
                         <div class="front">Get in Touch</div>
                         <div class="right">
-                            <a href="#" class="social-link"><img src="/images/twitter.svg" class="social-icon"></a>
-                            <a href="#" class="social-link"><img src="/images/facebook.svg" class="social-icon"></a>
-                            <a href="#" class="social-link"><img src="/images/linkedin.svg" class="social-icon"></a>
+                            <a href="#" class="social-link"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="social-link"><i class="fa fa-linkedin"></i></a>
                         </div>
                     </div>
                     <p class="footer-text">copyright © Zack <span>@2020</span></p>
@@ -155,5 +161,7 @@
         </main>
     </div>
     <script src="/scripts/script.js"></script>
+    <script src="/scripts/typedjs.js"></script>
+    <script src="/scripts/formcontrol.js"></script>
 </body>
 </html>

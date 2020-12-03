@@ -1,10 +1,11 @@
 @font-face {
     font-family: "Booter - Zero Zero";
-    src:    url("../Fonts/Booter - Zero Zero.woff") format("woff"),
-            url("../Fonts/Booter - Zero Zero.woff2") format("woff2");
+    src:    url("../fonts/Booter - Zero Zero.woff") format("woff"),
+            url("../fonts/Booter - Zero Zero.woff2") format("woff2");
 }
 
 $viewPortHeight: 100vh;
+$viewPortWidth: 100vw;
 $lazyLoad-speed: all 350ms ease-out;
 
 $big-title: 4rem;
