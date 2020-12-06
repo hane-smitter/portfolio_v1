@@ -823,19 +823,19 @@ main {
 }
 
 .slide-out-right {
-  transform: translateX(-500px);
+  transform: translateX(-500px) scale(0);
   transition: all 350ms ease-out;
   opacity: 0;
 }
 
 .slide-out-left {
-  transform: translateX(500px);
+  transform: translateX(500px) scale(0);
   transition: all 350ms ease-out;
   opacity: 0;
 }
 
 .slide-in {
-  transform: translateX(0);
+  transform: translateX(0) scale(1);
   opacity: 1;
 }
 
@@ -910,6 +910,24 @@ main {
   }
   .section-three__content .contact-heading {
     align-self: center;
+  }
+}
+
+@media only screen and (max-width: 444px) {
+  .header__main h1.header-name {
+    font-size: 5rem !important;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .header__main h1.header-name {
+    font-size: 4.5rem !important;
+  }
+}
+
+@media (max-width: 365px) {
+  .header .header__main .header-about {
+    font-size: 1.4rem !important;
   }
 }
 /*# sourceMappingURL=style.css.map */

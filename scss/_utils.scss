@@ -1,15 +1,15 @@
 .slide-out-right {
-    transform: translateX(-500px);
+    transform: translateX(-500px) scale(0);
     transition: $lazyLoad-speed;
     opacity: 0;
 }
 .slide-out-left {
-    transform: translateX(500px);
+    transform: translateX(500px) scale(0);
     transition: $lazyLoad-speed;
     opacity: 0;
 }
 .slide-in {
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
     opacity: 1;
 }
 

@@ -56,3 +56,18 @@
         align-self: center;
     }
 }
+@media only screen and (max-width: 444px) {
+    .header__main h1.header-name {
+        font-size: 5rem!important;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .header__main h1.header-name {
+        font-size: 4.5rem!important;
+    }
+}
+@media (max-width: 365px){
+    .header .header__main .header-about {
+        font-size: 1.4rem!important;
+    }
+}

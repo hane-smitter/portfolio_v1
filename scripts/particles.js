@@ -1,7 +1,7 @@
 const particles = [];
 let z;
 function setup() {
-createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight).parent('canvas-parent');
   const particlesLength = Math.floor(window.innerWidth / 10);
 
   for(let i = 0; i < particlesLength; i++) {
@@ -19,11 +19,6 @@ function draw() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
-/* function deviceTurned() {
-  if (turnAxis === 'X') {
-    resizeCanvas(windowHeight, windowWidth);
-  }
-} */
 class Particle {
   constructor() {
     //position
