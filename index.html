@@ -82,7 +82,7 @@
                 <div class="section-three__content">
                     <h1 class="contact-heading">contact</h1>
                     <p class="info-text" style="width: 100%; text-align: center;">We're in this together<br>Contact me and let's create something special !</p>
-                        <form method="POST" data-netlify = "true" name="portfolio-contact" class="email-box">
+                        <form method="POST" data-netlify = "true" name="portfolio-contact" class="email-box" id="demo-form">
                             <div class="row100">
                                 <div class="col">
                                     <div class="inputBox">
@@ -126,16 +126,17 @@
                             </div>
                             <div class="row100">
                                 <div class="col">
-                                    <div data-netlify-recaptcha="true"></div>
-                                </div>
-                            </div>
-                            <div class="row100">
-                                <div class="col">
-                                    <button type="submit">Send</button>
+                                    <button
+                                        class="g-recaptcha" 
+                                        data-callback='onSubmit' 
+                                        data-action='submit'  
+                                        type="submit"
+                                    >Send</button>
                                 </div>
                             </div>
                         </form>
                 </div>
+                <div id="g-badge"></div>
                 <footer class="section-three__footer">
                     <div class="social">
                         <div class="front">Get in Touch</div>
@@ -161,8 +162,10 @@
             </aside>
         </main>
     </div>
+    
     <script src="/scripts/script.js"></script>
     <script src="/scripts/typedjs.js"></script>
     <script src="/scripts/formcontrol.js"></script>
+     <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=doRecaptcha"></script>
 </body>
 </html>

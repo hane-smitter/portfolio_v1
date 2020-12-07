@@ -502,6 +502,7 @@ main {
             width: 80%;
             max-width: 800px;
             padding: 20px;
+            overflow: hidden;
             font-family: arial;
             transform: scale(0);
             transition: $lazyLoad-speed;

@@ -29,3 +29,13 @@ for (let textArea of $contactTextArea) {
         }
     });
 }
+function onSubmit(token) {
+    document.getElementById("demo-form").submit();
+  }
+function doRecaptcha() {
+    var clientId = grecaptcha.render('g-badge', {
+        'sitekey': '6Le8_fwZAAAAABw7ndcTMVGWHrAOh5hW9mGaDj8U',
+        'badge': 'bottomright',
+        'size': 'invisible'
+    });
+}
