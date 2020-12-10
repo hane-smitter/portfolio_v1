@@ -13,10 +13,6 @@
   font-size: 14px;
 }
 
-body {
-  overflow: hidden;
-}
-
 body p {
   color: #797979;
   font-size: 15px;
@@ -51,7 +47,8 @@ img {
 .container {
   height: 100vh;
   min-width: 100vw;
-  background: transparent;
+  background: #007bff;
+  padding-bottom: 100px;
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -608,6 +605,7 @@ main {
   width: 80%;
   max-width: 800px;
   padding: 20px;
+  overflow: hidden;
   font-family: arial;
   transform: scale(0);
   transition: all 350ms ease-out;
@@ -850,6 +848,28 @@ main {
   z-index: 7;
   bottom: 0;
   visibility: visible;
+}
+
+#g-badge {
+  min-height: 10px;
+  z-index: -20;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-left: 0;
+  width: 304px;
+  height: 80px;
+  display: grid;
+  align-items: center;
+  justify-items: stretch;
+  transform: translateX(-136px);
+  margin: 10px 0;
+  transition: 250ms transform linear;
+  filter: drop-shadow(2px 4px 16px rgba(0, 0, 0, 0.7));
+}
+
+#g-badge:hover {
+  transform: translateX(70px);
 }
 
 @media only screen and (max-width: 970px) {

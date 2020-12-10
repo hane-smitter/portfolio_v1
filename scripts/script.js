@@ -54,21 +54,14 @@ navIconsLiContainer.forEach((navIcon, index) => {
         });
     }
 });
+
+//Controlling the navigation tray size
+//<NavTray width>
 let navTrayWidth;
-navTrayUl.addEventListener('mouseover', () => {
-    navTray.style.width = navTrayWidth + 'px';
-    getComputedStyle(navTray).width;
-    navTrayNav.style.width = '100%';
-    navTrayUl.style.width = '100%';
-    navTraySpanLogo.style.width = '100%';
-});
-navTrayUl.addEventListener('mouseleave', () => {
-    navTray.style.width = '5rem';
-    getComputedStyle(navTray).width;
-    navTrayNav.style.width = '100%';
-    navTrayUl.style.width = '100%';
-    navTraySpanLogo.style.width = '100%';
-});
+navTrayUl.addEventListener('mouseover', onMouseOverNavTray);
+navTrayUl.addEventListener('mouseleave', onMouseLeaveNavTray);
+ifRemoveHoverOnNavTray();
+//</NavTray width>
 
 //giving action to the small screen icons
 for(const[index, icon] of smallScreenNavIcons.entries()){
@@ -88,6 +81,9 @@ for(const[index, icon] of smallScreenNavIcons.entries()){
         });
     }
 }
+
+/* FUNCTION DEFINITIONS */
+/* -------------------- */
 
 //checking whether screen is below 650px or above 650px
 onload = () => {
@@ -111,7 +107,7 @@ onresize = () => {
     arrowDownIconSiblingHeight = getComputedStyle(arrowDownIconSibling).height.replace('px', '');
     align();
 
-    if(window.innerWidth > 650) {
+    if(viewPortWidth > 650) {
         atLargeScreen();
     }else {
         atSmallScreen();
@@ -119,6 +115,36 @@ onresize = () => {
     navIconsLiContainer.forEach((liItem) => {
         liItem.style.width = navTrayWidth + "px";
     });
+
+    ifRemoveHoverOnNavTray();
+}
+
+//setting the width of navigation tray when hovered
+function onMouseOverNavTray() {
+    navTray.style.width = navTrayWidth + 'px';
+    getComputedStyle(navTray).width;
+    navTrayNav.style.width = '100%';
+    navTrayUl.style.width = '100%';
+    navTraySpanLogo.style.width = '100%';
+}
+function onMouseLeaveNavTray() {
+    navTray.style.width = '5rem';
+    getComputedStyle(navTray).width;
+    navTrayNav.style.width = '100%';
+    navTrayUl.style.width = '100%';
+    navTraySpanLogo.style.width = '100%';
+}
+
+//navTray checks
+function ifRemoveHoverOnNavTray() {
+    if(viewPortWidth <= 768) {
+        navTrayUl.removeEventListener('mouseover', onMouseOverNavTray);
+        navTrayUl.removeEventListener('mouseleave', onMouseLeaveNavTray);
+    } else {
+        navTrayUl.addEventListener('mouseover', onMouseOverNavTray);
+        navTrayUl.addEventListener('mouseleave', onMouseLeaveNavTray);
+    }
+    
 }
 
 //setting navigation pane to stick when necessary

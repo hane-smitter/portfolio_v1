@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/font-awesome.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js" integrity="sha512-BdHyGtczsUoFcEma+MfXc71KJLv/cd+sUsUaYYf2mXpfG/PtBjNXsPo78+rxWjscxUYN2Qr2+DbeGGiJx81ifg==" crossorigin="anonymous"></script>
-    <script src="/scripts/typedjs.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js" crossorigin="anonymous"></script>
     <title>Zack | Who I am</title>
 </head>
-<body id="canvas-parent">
-    <div class="container">
+<body>
+    <div class="container" id="canvas-parent">
         <!-- small screen navigation -->
         <nav class="tiny-navigation">
             <li><img src="./images/home.svg"/></li>
@@ -24,7 +23,7 @@
             <div class="header__main">
                 <h3 class="header-greet color">Hello There!</h3>
                 <h1 class="header-name color">I am Zacky aduoli.</h1>
-                <h5 class="header-about color">i'm a <span class="typed"> Developer</span></h5>
+                <h5 class="header-about color">i'm a <span class="typed"></span></h5>
             </div>
             <span class="header__scroll-icon"><img src="/images/arrow-downwards.svg"></span>
         </header>
@@ -135,7 +134,6 @@
                             </div>
                         </form>
                 </div>
-                <div id="g-badge"></div>
                 <footer class="section-three__footer">
                     <div class="social">
                         <div class="front">Get in Touch</div>
@@ -160,11 +158,15 @@
                 </nav>
             </aside>
         </main>
+
+        <!-- google recaptcha area -->
+        <div id="g-badge" class="main__content"></div>
     </div>
-    
+
     <script src="/scripts/particles.js"></script>
     <script src="/scripts/script.js"></script>
     <script src="/scripts/formcontrol.js"></script>
-     <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=doRecaptcha"></script>
+    <script src="/scripts/typedjs.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=doRecaptcha" async></script>
 </body>
 </html>
