@@ -24,23 +24,3 @@
     bottom: 0;
     visibility: visible;
 }
-#g-badge {
-    min-height: 10px;
-    z-index: -20;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    padding-left: 0;
-    width: 304px;
-    height: 80px;
-    display: grid;
-    align-items: center;
-    justify-items: stretch;
-    transform: translateX(-136px);
-    margin: 10px 0;
-    transition: 250ms transform linear;
-    filter: drop-shadow(2px 4px 16px rgba(0, 0, 0, .7));
-}
-#g-badge:hover {
-    transform: translateX(70px);
-}

@@ -13,10 +13,15 @@
   font-size: 14px;
 }
 
+body {
+  overflow: hidden;
+  position: relative;
+}
+
 body p {
   color: #797979;
   font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 @media (max-width: 500px) {
@@ -47,8 +52,6 @@ img {
 .container {
   height: 100vh;
   min-width: 100vw;
-  background: #007bff;
-  padding-bottom: 100px;
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -103,10 +106,32 @@ img {
   grid-auto-rows: min-content;
   place-content: center;
   position: relative;
+  z-index: 2;
+}
+
+.header::before, .header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.header::before {
+  background: linear-gradient(rgba(255, 0, 0, 0.6), rgba(255, 0, 255, 0.6));
+  clip-path: circle(30% at right 15%);
+}
+
+.header::after {
+  background: linear-gradient(rgba(33, 150, 243, 0.6), rgba(233, 30, 99, 0.6));
+  clip-path: circle(20% at 10% 75%);
 }
 
 .header .header__main {
   width: 100%;
+  z-index: 5;
 }
 
 .header .header__main .color {
@@ -182,6 +207,7 @@ img {
   bottom: var(--siblings-height);
   transform: translateX(-50%);
   cursor: pointer;
+  z-index: 6;
 }
 
 .header__scroll-icon img {
@@ -848,28 +874,6 @@ main {
   z-index: 7;
   bottom: 0;
   visibility: visible;
-}
-
-#g-badge {
-  min-height: 10px;
-  z-index: -20;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  padding-left: 0;
-  width: 304px;
-  height: 80px;
-  display: grid;
-  align-items: center;
-  justify-items: stretch;
-  transform: translateX(-136px);
-  margin: 10px 0;
-  transition: 250ms transform linear;
-  filter: drop-shadow(2px 4px 16px rgba(0, 0, 0, 0.7));
-}
-
-#g-badge:hover {
-  transform: translateX(70px);
 }
 
 @media only screen and (max-width: 970px) {
