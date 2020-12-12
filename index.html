@@ -5,23 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="This is my personal website. It is where I showcase my skills on what I do. You can reach out to me via my contacts displayed in the website(contact section). I'm looking forward to us working together and be sure to come back for more.">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="prefetch" href="/images/dev.jpeg">
+    <link rel="prefetch" href="/images/myself.png">
+
+    <link rel="preload" href="/css/font-awesome.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/font-awesome.css"></noscript>
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="preload" href="/fonts/Booter - Zero Zero.woff" as="font" type="font/woff" crossorigin>
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/font-awesome.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js" crossorigin="anonymous" defer></script>
     <title>Zack | Who I am</title>
 </head>
 <body>
     <div class="container" id="canvas-parent">
         <!-- small screen navigation -->
-        <nav class="tiny-navigation">
-            <li><img src="./images/home.svg"/></li>
-            <li><img src="./images/about.svg"/></li>
-            <li><img src="./images/mail.svg"/></li>
+        <nav class="tiny-navigation nav">
+            <ul>
+                <li><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></li>
+                <li><i class="fa fa-user" aria-hidden="true"></i><span>About</span></li>
+                <li><i class="fa fa-envelope" aria-hidden="true"></i><span>Contact</span></li>
+            </ul>
         </nav>
         <header class="header" id="home">
             <div class="header__main">
@@ -150,12 +157,12 @@
             </section>
             
             <aside id="main__navigation">
-                <nav>
+                <nav class="nav">
                     <ul>
                         <span><span>Zack</span> <img src="./images/arrow-right.svg"></span>
-                        <li><img src="./images/home.svg"/> <span>Home</span></li>
-                        <li><img src="./images/about.svg"/> <span>About</span></li>
-                        <li><img src="./images/mail.svg"/> <span>Contact</span></li>
+                        <li><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></li>
+                        <li><i class="fa fa-user" aria-hidden="true"></i><span>About</span></li>
+                        <li><i class="fa fa-envelope" aria-hidden="true"></i><span>Contact</span></li>
                     </ul>
                 </nav>
             </aside>
@@ -164,7 +171,7 @@
 
     <script src="/scripts/script.js"></script>
     <script src="/scripts/formcontrol.js"></script>
-    <script src="/scripts/particles.js"></script>
-    <script src="/scripts/typedjs.js"></script>
+    <script src="/scripts/particles.js" defer></script>
+    <script src="/scripts/typedjs.js" defer></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Booter - Zero Zero";
   src: url("../fonts/Booter - Zero Zero.woff") format("woff"), url("../fonts/Booter - Zero Zero.woff2") format("woff2");
+  font-display: swap;
 }
 
 *, *::before, *::after {
@@ -21,7 +22,7 @@ body {
 body p {
   color: #797979;
   font-size: 15px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 @media (max-width: 500px) {
@@ -49,6 +50,15 @@ img {
   border-radius: 4px;
 }
 
+nav.nav i {
+  font-size: 40px;
+  color: #f8faff;
+}
+
+nav.nav i + span {
+  color: #f8faff;
+}
+
 .container {
   height: 100vh;
   min-width: 100vw;
@@ -63,15 +73,18 @@ img {
   height: 5rem;
   width: 100%;
   position: absolute;
+  background-color: #444;
+  z-index: -7;
+  visibility: hidden;
+}
+
+.tiny-navigation ul {
   display: grid;
   place-items: center;
   align-items: center;
   justify-items: center;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
-  background-color: #444;
-  z-index: -7;
-  visibility: hidden;
 }
 
 .tiny-navigation li {
@@ -81,6 +94,9 @@ img {
   padding: 0 7px;
   border-radius: 7px;
   transform: scale(0.9);
+  display: grid;
+  justify-items: center;
+  align-items: center;
 }
 
 .tiny-navigation li:hover {
@@ -120,7 +136,7 @@ img {
 }
 
 .header::before {
-  background: linear-gradient(rgba(255, 0, 0, 0.6), rgba(255, 0, 255, 0.6));
+  background: linear-gradient(rgba(255, 0, 0, 0.45), rgba(255, 0, 255, 0.6));
   clip-path: circle(30% at right 15%);
 }
 
@@ -232,12 +248,13 @@ main {
   width: var(--nav-tray-width);
   max-width: 500px;
   min-width: 5rem;
-  height: 100%;
   top: 1%;
+  bottom: 1%;
   transition: width 250ms ease-out;
   transition-delay: 100ms;
   background: #444;
   border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   overflow: hidden;
   z-index: 15;
 }
@@ -298,13 +315,6 @@ main {
   cursor: pointer;
   display: flex;
   justify-content: flex-start;
-}
-
-#main__navigation li img {
-  width: 50px;
-  height: 100%;
-  filter: invert(1);
-  transition: transform 200ms ease-in;
 }
 
 #main__navigation li span {
@@ -492,7 +502,7 @@ main {
   width: 40%;
   margin-left: auto;
   align-self: center;
-  transition: all 350ms ease-out;
+  transition: all 400ms ease-out;
 }
 
 .section-one .about-me .about-me__image img {
@@ -634,7 +644,7 @@ main {
   overflow: hidden;
   font-family: arial;
   transform: scale(0);
-  transition: all 350ms ease-out;
+  transition: all 400ms ease-out;
 }
 
 .section-three__content .email-box h2 {
@@ -848,13 +858,13 @@ main {
 
 .slide-out-right {
   transform: translateX(-500px) scale(0);
-  transition: all 350ms ease-out;
+  transition: all 400ms ease-out;
   opacity: 0;
 }
 
 .slide-out-left {
   transform: translateX(500px) scale(0);
-  transition: all 350ms ease-out;
+  transition: all 400ms ease-out;
   opacity: 0;
 }
 
@@ -913,7 +923,7 @@ main {
   }
 }
 
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 576px) {
   :root {
     font-size: 11px;
   }
@@ -923,17 +933,14 @@ main {
   .tiny-navigation li img {
     transform: scale(0.85);
   }
+  .header__scroll-icon.tiny-effect {
+    transform: translate(-50%, -50px);
+  }
 }
 
 @media only screen and (max-width: 475px) {
   .section-three {
     padding: 0;
-  }
-  .section-three__content {
-    align-items: flex-start;
-  }
-  .section-three__content .contact-heading {
-    align-self: center;
   }
 }
 
