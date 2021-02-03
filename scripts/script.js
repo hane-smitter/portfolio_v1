@@ -14,6 +14,7 @@ let navIconsLiContainer = document.querySelectorAll('#main__navigation li');
 let navIcons = document.querySelectorAll('#main__navigation li img');
 
 let section1 = document.getElementsByClassName('section-one')[0];
+let section2 = document.getElementsByClassName('section-two')[0];
 let section3 = document.getElementsByClassName('section-three')[0];
 
 let smallScreenNavigation = allItemsContainer.querySelector('.tiny-navigation');
@@ -50,6 +51,11 @@ navIconsLiContainer.forEach((navIcon, index) => {
     }
     if(index == 2) {
         navIcon.addEventListener('click', () => {
+            section2.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+        });
+    }
+    if(index == 3) {
+        navIcon.addEventListener('click', () => {
             section3.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
         });
     }
@@ -76,6 +82,11 @@ for(const[index, icon] of smallScreenNavIcons.entries()){
         });
     }
     if(index == 2) {
+        smallScreenNavIcons[index].addEventListener('click', () => {
+            section2.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+        });
+    }
+    if(index == 3) {
         smallScreenNavIcons[index].addEventListener('click', () => {
             section3.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
         });

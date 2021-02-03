@@ -2,6 +2,38 @@
 
 @import "reset";
 
+//section tile
+.section-big-title {
+    font-size: $big-title;
+    text-align: center;
+    font-weight: $h1_fw;
+    text-transform: uppercase;
+    font-family: arial;
+
+    &  span {
+        position: relative;
+    }
+    
+    &  span::after {
+        content: '';
+        top: 100%;
+        height: 3px;
+        font-family: arial;
+        width: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        background: $title-color;
+        position: absolute;
+    }
+    &  span.color {
+        color: #45f3ff;
+    }
+    &  span.color::after {
+        background-color: #45f3ff;
+    }
+}
+
 .container {
     height: $viewPortHeight;
     min-width: $viewPortWidth;
@@ -189,6 +221,10 @@ main {
         height: 100%;
         width: 5rem;
         list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        row-gap: 5%;
     }
     & nav ul:hover > span img {
         transform: rotateZ(-.5turn) scale(1.4);
@@ -265,12 +301,13 @@ main {
     &  li:first-of-type {
         margin-top: 10px;
     }
-    &  li:nth-of-type(2) {
-        margin-top: 40px;
-        margin-bottom: 40px;
+    &  li:last-of-type {
+        margin-top: auto;
+        margin-bottom: 10px;
     }
 }
 .main__content {
+    --text-padding-left: 15px;
 
     padding-left: 5rem;
     line-height: 1.5;
@@ -278,7 +315,7 @@ main {
 
 }
 .section-one {
-    --text-padding-left: 15px;
+    
 
     &-about {
         font-size: $big-title;
@@ -497,27 +534,7 @@ main {
         flex-direction: column;
         min-height: calc($viewPortHeight - 200px);
         width: 100%;
-        & .contact-heading {
-            text-align: center;
-            font-size: $big-title;
-            font-weight: var(--h1_fw);
-            text-transform: uppercase;
-            font-family: arial;
-            color: #45f3ff;
-            position: relative;
-            margin-bottom: 20px;
-        }
-        & .contact-heading::before {
-            content: '';
-            display: block;
-            height: 3px;
-            width: 120px;
-            background-color: #45f3ff;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+
         .email-box {
             width: 80%;
             max-width: 800px;

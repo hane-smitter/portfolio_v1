@@ -1,1 +1,1 @@
-hello, this is my portfolio i created from scratch. It is suited to run on all screen sizes without the layout getting out of control.
+This portfolio is created from scratch. There are no configurations required. Sass has been heavily used to generate the css and the email functionality is out-sourced.
