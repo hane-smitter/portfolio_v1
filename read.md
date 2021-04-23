@@ -1,1 +1,0 @@
-This portfolio is created from scratch. There are no configurations required. Sass has been heavily used to generate the css and the email functionality is out-sourced.

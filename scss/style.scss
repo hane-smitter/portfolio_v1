@@ -756,7 +756,6 @@ main {
     position: relative;
     transform-style: preserve-3d;
     transition: .6s .1s;
-    filter: drop-shadow(1px 8px 8px #000);
   }
   
   /* hover and focus-within states */
@@ -766,12 +765,13 @@ main {
   }
   
   /* .card-... */
-  .card-front,
-  .card-back {
+  .flip-card .card-front,
+  .flip-card .card-back {
     width: 100%;
     height: 100%;
     border-radius: 24px;
-  
+    filter: drop-shadow(1px 4px 3px #00000088);
+
     background: var(--dark);
     position: absolute;
     top: 0;
@@ -903,6 +903,7 @@ main {
     padding-bottom: 12px;
   
     font-size: 14px;
+    font-weight: 600;
     text-align: center;
   
     position: relative;
@@ -924,6 +925,9 @@ main {
             background: currentColor;
             opacity: .2;
         }
+    }
+    .section-two hr {
+        width: 100%;
     }
   
   /* button */
@@ -1059,15 +1063,6 @@ main {
   .section-two .button:focus+.design-container {
     --tr: 20;
     --op: .7;
-  }
-  
-  .abs-site-link {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    color: hsla(0, 0%, 100%, .6);
-    font-size: 16px;
-    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 /* /imported */
 
