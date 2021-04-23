@@ -1,179 +1,474 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is my personal website. It is where I showcase my skills on what I do. You can reach out to me via my contacts displayed in the website(contact section). I'm looking forward to us working together and be sure to come back for more.">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="prefetch" href="/images/dev.jpeg">
-    <link rel="prefetch" href="/images/myself.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This is my personal website. It is where I showcase my skills on what I do. You can reach out to me via my contacts displayed in the website(contact section). I'm looking forward to us working together and be sure to come back for more."
+    />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="prefetch" href="/images/dev.jpeg" />
+    <link rel="prefetch" href="/images/myself.png" />
+    <link rel="manifest" href="/images/manifest.json" />
+    <link rel="apple-touch-icon" href="https://i.imgur.com/73ShhTP.png" />
 
-    <link rel="preload" href="/css/font-awesome.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/css/font-awesome.css"></noscript>
+    <link
+      rel="preload"
+      href="/css/font-awesome.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="/css/font-awesome.css" /></noscript>
 
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
-    <link rel="preload" href="/fonts/Booter - Zero Zero.woff" as="font" type="font/woff" crossorigin>
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" crossorigin="anonymous" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js" crossorigin="anonymous" defer></script>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="/fonts/Booter - Zero Zero.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
     <title>Find me | zacky aduoli</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container" id="canvas-parent">
-        <!-- small screen navigation -->
-        <nav class="tiny-navigation nav">
-            <ul>
-                <li><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></li>
-                <li><i class="fa fa-user" aria-hidden="true"></i><span>About</span></li>
-                <li><i class="fa fa-tasks" aria-hidden="true"></i><span>Projects</span></li>
-                <li><i class="fa fa-envelope" aria-hidden="true"></i><span>Contact</span></li>
-            </ul>
-        </nav>
-        <header class="header" id="home">
-            <div class="header__main">
-                <h3 class="header-greet color">Hello There!</h3>
-                <h1 class="header-name color">I am Zacky aduoli.</h1>
-                <h5 class="header-about color">i'm a <span class="typed"></span></h5>
+      <!-- small screen navigation -->
+      <nav class="tiny-navigation nav">
+        <ul>
+          <li>
+            <i class="fa fa-home" aria-hidden="true"></i><span>Home</span>
+          </li>
+          <li>
+            <i class="fa fa-user" aria-hidden="true"></i><span>About</span>
+          </li>
+          <li>
+            <i class="fa fa-tasks" aria-hidden="true"></i><span>Projects</span>
+          </li>
+          <li>
+            <i class="fa fa-envelope" aria-hidden="true"></i
+            ><span>Contact</span>
+          </li>
+        </ul>
+      </nav>
+      <header class="header" id="home">
+        <div class="header__main">
+          <h3 class="header-greet color">Hello There!</h3>
+          <h1 class="header-name color">I am Zacky aduoli.</h1>
+          <h5 class="header-about color">i'm a <span class="typed"></span></h5>
+        </div>
+        <span class="header__scroll-icon"
+          ><img src="/images/arrow-downwards.svg"
+        /></span>
+      </header>
+      <main>
+        <section class="main__content section-one">
+          <h1 class="section-big-title"><span>About</span></h1>
+          <div class="about-me">
+            <div class="about-me__info slide-out-right">
+              <p>ABOUT ME</p>
+              <h3 class="about-me-subhead">Creative Web Developer</h3>
+              <div class="sm-image">
+                <img src="/images/dev.jpeg" alt="zack" />
+              </div>
+              <p class="about-me-text">
+                <span style="font-family: 'Gunslinger',sans-serif; letter-spacing: .7px;">CREATIVE APPROACH IS MY SIGNATURE !</span><br /><br />
+
+                This is Zacky Aduoli's website and here is a bit of copy about
+                him. He is a technology enthusiast. He creates and supports
+                websites and applications for clients and for fun. He loves
+                using modern technology to create exceptional user experiences,
+                and always strive to create products that stand out. He lives
+                through his interests in soccer, painting, fitness training and
+                travelling.
+                <br /><br />
+                Am always interested in a new challenge. I'd love to
+                <a href="#contact">hear</a> from you.
+              </p>
+              <!-- skills section -->
+              <p class="ul">my skills</p>
+              <ul class="about-me-text">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript (Es6+)</li>
+                <li>Sass</li>
+                <li>React.js</li>
+                <li>Node.js</li>
+                <li>PHP</li>
+                <li>Laravel</li>
+                <li>Express</li>
+                <li>MongoDb</li>
+                <li>MySQL</li>
+              </ul>
+              <a href="#contact" class="work-together-link">
+                Want us to work together?
+              </a>
             </div>
-            <span class="header__scroll-icon"><img src="/images/arrow-downwards.svg"></span>
-        </header>
-        <main>
-            <section class="main__content section-one">
-                <h1 class="section-big-title"><span>About</span></h1>
-                <div class="about-me">
-                    <div class="about-me__info slide-out-right">
-                        <p>ABOUT ME</p>
-                        <h3 class="about-me-subhead">Creative Web Developer</h3>
-                        <div class="sm-image">
-                            <img src="/images/dev.jpeg" alt="zack">
-                        </div>
-                        <p class="about-me-text">
-                            I'm a fullstack engineer from Kakamega, Kenya. I create and support websites and applications for clients and for fun. I am fueled by my passion for technology to explore the latest trends. I love using modern technology to create exceptional user experiences, and always strive to create high quality products. I believe mindfulness in the workplace is key to success - a tenet I live through my interests in soccer, painting, fitness training and travelling. Am open to work and am always intereted in a new challenge.
-                        </p>
-                        <!-- skills section -->
-                        <p class="ul">my skills</p>
-                        <ul class="about-me-text">
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Javascript (Es6+)</li>
-                            <li>Node.js</li>
-                            <li>PHP</li>
-                        </ul>
-                        <a href="#contact" class="work-together-link">Want us to work together?</a>
-                    </div>
-                    <div class="about-me__image slide-out-left">
-                        <img src="/images/myself.png" alt="">
-                    </div>
+            <div class="about-me__image slide-out-left">
+              <img src="/images/myself.png" alt="" />
+            </div>
+          </div>
+          <p class="goals-text">my goals</p>
+          <div class="goals">
+            <div class="background slide-out-left">
+              <div class="content section1">
+                <div class="banner banner1">
+                  <p class="info info-title">fast</p>
                 </div>
-                <p class="goals-text">my goals</p>
-                <div class="goals">
-                    <div class="background slide-out-left">
-                        <div class="content section1">
-                            <div class="banner banner1"><p class="info info-title">fast</p></div>
-                            <p class="info info-text">Fast load times and lag free website interaction, my highest priority.</p>
-                        </div>
-                        <div class="content section2">
-                            <div class="banner banner2"><p class="info info-title">responsive</p></div>
-                            <p class="info info-text">Layouts that respond to the width of the device.</p>
-                        </div>
-                        <div class="content section3">
-                            <div class="banner banner3"><p class="info info-title">dynamic</p></div>
-                            <p class="info info-text">Websites don't have to be static. I breathe life into websites to make them interactive and dynamic.</p>
-                        </div>
-                    </div>
+                <p class="info info-text">
+                  Fast load times and lag free website interaction, my highest
+                  priority.
+                </p>
+              </div>
+              <div class="content section2">
+                <div class="banner banner2">
+                  <p class="info info-title">responsive</p>
                 </div>
-            </section>
-            <section class="main__content section-two">
-                <h1 class="section-big-title"><span>projects</span></h1>
-            </section>
-            <section class="main__content section-three" id="contact">
-                <svg preserveAspectRatio="none" viewBox="0 0 100 102" height="75" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
-                    <path d="M0 0 L50 100 L100 0 Z" fill="#fff" stroke="white"></path>
-                  </svg>
-                <div class="section-three__content">
-                    <h1 class="section-big-title"><span class="color">contact</span></h1>
-                    <p class="info-text" style="width: 100%; text-align: center; color: #fefe;">We're in this together<br>Contact me and let's create something special !</p>
-                        <form method="POST" data-netlify = "true" name="portfolio-contact" class="email-box" id="demo-form">
-                            <div class="row100">
-                                <div class="col">
-                                    <div class="inputBox">
-                                        <input type="text" name="first-name" required autocomplete="off">
-                                        <span class="text">First Name</span>
-                                        <span class="line"></span>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="inputBox">
-                                        <input type="text" name="last-name" required autocomplete="off">
-                                        <span class="text">last Name</span>
-                                        <span class="line"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row100">
-                                <div class="col">
-                                    <div class="inputBox">
-                                        <input type="text" name="email" required>
-                                        <span class="text">Email</span>
-                                        <span class="line"></span>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="inputBox">
-                                        <input type="text" name="phone">
-                                        <span class="text">Mobile No. <small>(<i>optional</i>)</small></span>
-                                        <span class="line"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row100">
-                                <div class="col">
-                                    <div class="inputBox textarea">
-                                        <textarea name="message" required></textarea>
-                                        <span class="text">Type your message here</span>
-                                        <span class="line"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row100">
-                                <div class="col">
-                                    <button type="submit">Send</button>
-                                </div>
-                            </div>
-                        </form>
+                <p class="info info-text">
+                  Layouts that respond to the width of the device.
+                </p>
+              </div>
+              <div class="content section3">
+                <div class="banner banner3">
+                  <p class="info info-title">dynamic</p>
                 </div>
-                <footer class="section-three__footer">
-                    <div class="social">
-                        <div class="front">Get in Touch</div>
-                        <div class="right">
-                            <a href="#" class="social-link"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fa fa-facebook"></i></a>
-                            <a href="https://www.linkedin.com/in/zacky-aduoli-b5047a176/" target="_blank" class="social-link"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <p class="footer-text">copyright © Zack <span>@2020</span></p>
-                </footer>
-            </section>
-            
-            <aside id="main__navigation">
-                <nav class="nav">
-                    <ul>
-                        <span><span>Zack</span> <img src="./images/arrow-right.svg"></span>
-                        <li><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></li>
-                        <li><i class="fa fa-user" aria-hidden="true"></i><span>About</span></li>
-                        <li><i class="fa fa-tasks" aria-hidden="true"></i><span>Projects</span></li>
-                        <li><i class="fa fa-envelope" aria-hidden="true"></i><span>Contact</span></li>
-                    </ul>
-                </nav>
-            </aside>
-        </main>
+                <p class="info info-text">
+                  Websites don't have to be static. I breathe life into websites
+                  to make them interactive and dynamic.
+                </p>
+              </div>
+              <div class="content section4">
+                <div class="banner banner4">
+                  <p class="info info-title">Intuitive</p>
+                </div>
+                <p class="info info-text">
+                  Strong preference for easy to use, intuitive UX/UI.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="main__content section-two">
+          <h1 class="section-big-title"><span>projects</span></h1>
+
+          <!-- imported -->
+          <div class="flex-even">
+            <!-- flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+              <div class="flip-card">
+                <div class="card-front">
+                  <figure>
+                    <div class="img-bg"></div>
+                    <img
+                      src="https://imgur.com/DisVods.png"
+                      alt="News App"
+                    />
+                    <figcaption>AI news app</figcaption>
+                  </figure>
+
+                  <ul>
+                    <li>Technologies used</li>
+                    <hr>
+                    <li>Javascript</li>
+                    <li>React.js</li>
+                    <li>Material-ui</li>
+                    <li>CSS</li>
+                  </ul>
+                </div>
+
+                <div class="card-back">
+                  <figure>
+                    <div class="img-bg"></div>
+                    <img
+                      src="https://imgur.com/DisVods.png"
+                      alt="News App"
+                    />
+                  </figure>
+
+                   <a href="https://news-ish.netlify.app" target="_blank" class="button">Visit</a>
+
+                  <div class="design-container">
+                    <span class="design design--1"></span>
+                    <span class="design design--2"></span>
+                    <span class="design design--3"></span>
+                    <span class="design design--4"></span>
+                    <span class="design design--5"></span>
+                    <span class="design design--6"></span>
+                    <span class="design design--7"></span>
+                    <span class="design design--8"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /flip-card-container -->
+
+            <!-- flip-card-container -->
+            <div class="flip-card-container" style="--hue: 170">
+              <div class="flip-card">
+                <div class="card-front">
+                  <figure>
+                    <div class="img-bg"></div>
+                    <img
+                      src="https://imgur.com/nPxo5vt.png"
+                      alt="mmusify screenshot"
+                    />
+                    <figcaption>Shoes Online Store</figcaption>
+                  </figure>
+
+                  <ul>
+                    <li>Technologies used</li>
+                    <hr>
+                    <li>Node.js</li>
+                    <li>Express</li>
+                    <li>MongoDB</li>
+                    <li>Bootstrap</li>
+                  </ul>
+                </div>
+
+                <div class="card-back">
+                  <figure>
+                    <div class="img-bg"></div>
+                    <img
+                      src="https://imgur.com/nPxo5vt.png"
+                      alt="mmusify screenshot"
+                    />
+                  </figure>
+
+                   <a href="https://mmusify.herokuapp.com" target="_blank" class="button">Visit</a>
+
+                  <div class="design-container">
+                    <span class="design design--1"></span>
+                    <span class="design design--2"></span>
+                    <span class="design design--3"></span>
+                    <span class="design design--4"></span>
+                    <span class="design design--5"></span>
+                    <span class="design design--6"></span>
+                    <span class="design design--7"></span>
+                    <span class="design design--8"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /flip-card-container -->
+
+            <!-- flip-card-container -->
+            <div class="flip-card-container" style="--hue: 350">
+              <div class="flip-card">
+                <div class="card-front">
+                  <figure>
+                    <div class="img-bg"></div>
+                    <img
+                      src="https://imgur.com/bT2rwmv.png"
+                      alt="Brohm Lake"
+                    />
+                    <figcaption>Covid Tracker</figcaption>
+                  </figure>
+
+                  <ul>
+                    <li>Technologies used</li>
+                    <hr>
+                    <li>Javascript</li>
+                    <li>CSS</li>
+                    <li>Chart.js</li>
+                  </ul>
+                </div>
+
+                <div class="card-back">
+                  <!-- only if the image is necessary -->
+                  <figure>
+                    <div class="img-bg"></div>
+                    <img
+                      src="https://imgur.com/bT2rwmv.png"
+                      alt="covid no."
+                    />
+                  </figure>
+
+                   <a href="https://covid-numbers.herokuapp.com" target="_blank" class="button">Visit</a>
+
+                  <!-- can add svg here and remove these eight spans -->
+                  <div class="design-container">
+                    <span class="design design--1"></span>
+                    <span class="design design--2"></span>
+                    <span class="design design--3"></span>
+                    <span class="design design--4"></span>
+                    <span class="design design--5"></span>
+                    <span class="design design--6"></span>
+                    <span class="design design--7"></span>
+                    <span class="design design--8"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /flip-card-container -->
+          </div>
+          <!-- //imported -->
+        </section>
+        <section class="main__content section-three" id="contact">
+          <svg
+            preserveAspectRatio="none"
+            viewBox="0 0 100 102"
+            height="75"
+            width="100%"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            class="svgcolor-light"
+          >
+            <path d="M0 0 L50 100 L100 0 Z" fill="#fff" stroke="white"></path>
+          </svg>
+          <div class="section-three__content">
+            <h1 class="section-big-title">
+              <span class="color">contact</span>
+            </h1>
+            <p
+              class="info-text"
+              style="width: 100%; text-align: center; color: #fefe"
+            >
+              We're in this together<br />Contact me and let's create something
+              special !
+            </p>
+            <form
+              method="POST"
+              data-netlify="true"
+              name="portfolio-contact"
+              class="email-box"
+              id="demo-form"
+            >
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox">
+                    <input
+                      type="text"
+                      name="first-name"
+                      required
+                      autocomplete="off"
+                    />
+                    <span class="text">First Name</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="inputBox">
+                    <input
+                      type="text"
+                      name="last-name"
+                      required
+                      autocomplete="off"
+                    />
+                    <span class="text">last Name</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="text" name="email" required />
+                    <span class="text">Email</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="text" name="phone" />
+                    <span class="text"
+                      >Mobile No. <small>(<i>optional</i>)</small></span
+                    >
+                    <span class="line"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox textarea">
+                    <textarea name="message" required></textarea>
+                    <span class="text">Type your message here</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <button type="submit">Send</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <footer class="section-three__footer">
+            <div class="social">
+              <div class="front">Get in Touch</div>
+              <div class="right">
+                <a href="#" class="social-link"
+                  ><i class="fa fa-twitter"></i
+                ></a>
+                <a href="#" class="social-link"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/zacky-aduoli-b5047a176/"
+                  target="_blank"
+                  class="social-link"
+                  ><i class="fa fa-linkedin"></i
+                ></a>
+              </div>
+            </div>
+            <p
+              class="footer-text"
+              style="display: flex; align-items: center; gap: 0.1em"
+            >
+              <img
+                height="70"
+                src="https://i.imgur.com/73ShhTP.png"
+                alt="logo"
+              />copyright © Zack <span>@2021</span>
+            </p>
+          </footer>
+        </section>
+
+        <aside id="main__navigation">
+          <nav class="nav">
+            <ul>
+              <span
+                ><span>Zack</span><img src="./images/arrow-right.svg"
+              /></span>
+              <li>
+                <i class="fa fa-home" aria-hidden="true"></i><span>Home</span>
+              </li>
+              <li>
+                <i class="fa fa-user" aria-hidden="true"></i><span>About</span>
+              </li>
+              <li>
+                <i class="fa fa-tasks" aria-hidden="true"></i
+                ><span>Projects</span>
+              </li>
+              <li>
+                <i class="fa fa-envelope" aria-hidden="true"></i
+                ><span>Contact</span>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+      </main>
     </div>
 
     <script src="/scripts/script.js"></script>
     <script src="/scripts/formcontrol.js"></script>
     <script src="/scripts/particles.js" defer></script>
     <script src="/scripts/typedjs.js" defer></script>
-</body>
+  </body>
 </html>

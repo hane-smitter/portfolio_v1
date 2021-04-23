@@ -24,3 +24,8 @@
     bottom: 0;
     visibility: visible;
 }
+.flex-even {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

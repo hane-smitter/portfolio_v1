@@ -1,7 +1,12 @@
 @font-face {
     font-family: "Booter - Zero Zero";
     src:    url("../fonts/Booter - Zero Zero.woff") format("woff"),
-            url('../fonts/Booter - Zero Zero.woff2') format('woff2');
+            url("../fonts/Booter - Zero Zero.woff2") format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: "Gunslinger";
+    src:    url("../fonts/Olivia & Kevin.ttf") format("truetype");
     font-display: swap;
 }
 
@@ -21,7 +26,7 @@ $font           : "Booter - Zero Zero",sans-serif;
 $primary-color  : #1345e6;
 $primary-color2 : #ed239f;
 $title-color    : #05364d;
-$text-color     : rgba(64,81,102,.96);
+$text-color     : rgba(73, 83, 97, 0.96);
 $nav-tray-color : #444;
 $pinky-white    : #fefe;
 $offwhite       : #f8faff;
