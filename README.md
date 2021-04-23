@@ -4,7 +4,7 @@ This project is built from scratch to serve as an online porfolio website.<br>
 *[Click here](https://lookupzach.netlify.app)* to see live version of the project.<br>
 
 ## Getting started
-NB: Sass, a css precompiler, is used. You may download it into you working directory from the npm repository if you have [node.js](https://nodejs.org/en/download/) installed. You can get instructions on usage [here](https://www.npmjs.com/package/sass). You may also want to use [sass live compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass) extension for [VS code editor](https://code.visualstudio.com/download).
+NB: Sass, a css precompiler, is used. You may download it into your working directory from the npm repository if you have [node.js](https://nodejs.org/en/download/) installed. You can get instructions on usage [here](https://www.npmjs.com/package/sass). You may also want to use [sass live compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass) extension for [VS code editor](https://code.visualstudio.com/download).
 
 - Clone the repository
 ```
