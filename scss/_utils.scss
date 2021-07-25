@@ -17,6 +17,10 @@
     display: none;
     position: absolute;
 }
+.show {
+    opacity: 1!important;
+}
+
 .dock-bottom {
     position: fixed;
     left: 0;

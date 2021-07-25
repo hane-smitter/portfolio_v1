@@ -230,7 +230,7 @@ main {
         transform: rotateZ(-.5turn) scale(1.4);
     }
     & nav ul:hover > span span {
-        display: inline-block;
+        opacity: 1;
     }
     & nav ul > span{
         display: flex;
@@ -246,7 +246,8 @@ main {
             letter-spacing: 3px;
             text-transform: uppercase;
             padding: var(--padding-items);
-            display: none;
+            opacity: 0;
+            transition: opacity 400ms ease-in;
         }
         img {
             transform: scale(1.4);
@@ -401,8 +402,7 @@ main {
 
                 li {
                     font-size: 1.2rem;
-                    list-style-type: disc;
-                    list-style-image: url(/images/check.svg);
+                    list-style-image: url(/public/images/check.svg);
                     list-style-position: inside;
                 }
             }
@@ -533,7 +533,7 @@ main {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        min-height: calc($viewPortHeight - 200px);
+        min-height: calc($viewPortHeight - 200);
         width: 100%;
 
         .email-box {

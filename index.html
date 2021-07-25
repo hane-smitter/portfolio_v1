@@ -7,19 +7,19 @@
       name="description"
       content="This is my personal website. It is where I showcase my skills on what I do. You can reach out to me via my contacts displayed in the website(contact section). I'm looking forward to us working together and be sure to come back for more."
     />
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="prefetch" href="/images/dev.jpeg" />
-    <link rel="prefetch" href="/images/myself.png" />
-    <link rel="manifest" href="/images/manifest.json" />
+    <link rel="shortcut icon" href="/public/images/favicon.ico" type="image/x-icon" />
+    <link rel="prefetch" href="/public/images/dev.jpeg" />
+    <link rel="prefetch" href="/public/images/myself.png" />
+    <link rel="manifest" href="/public/images/manifest.json" />
     <link rel="apple-touch-icon" href="https://i.imgur.com/73ShhTP.png" />
 
     <link
       rel="preload"
-      href="/css/font-awesome.css"
+      href="/public/css/font-awesome.css"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
-    <noscript><link rel="stylesheet" href="/css/font-awesome.css" /></noscript>
+    <noscript><link rel="stylesheet" href="/public/css/font-awesome.css" /></noscript>
 
     <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -29,12 +29,12 @@
     />
     <link
       rel="preload"
-      href="/fonts/Booter - Zero Zero.woff"
+      href="/public/fonts/Booter - Zero Zero.woff"
       as="font"
       type="font/woff"
       crossorigin
     />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/public/css/style.css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"
       crossorigin="anonymous"
@@ -56,13 +56,13 @@
             <i class="fa fa-home" aria-hidden="true"></i><span>Home</span>
           </li>
           <li>
-            <i class="fa fa-user" aria-hidden="true"></i><span>About</span>
+            <i class="fa fa-address-book-o" aria-hidden="true"></i><span>About</span>
           </li>
           <li>
-            <i class="fa fa-tasks" aria-hidden="true"></i><span>Projects</span>
+            <i class="fa fa-code" aria-hidden="true"></i><span>Projects</span>
           </li>
           <li>
-            <i class="fa fa-envelope" aria-hidden="true"></i
+            <i class="fa fa-envelope-o" aria-hidden="true"></i
             ><span>Contact</span>
           </li>
         </ul>
@@ -74,7 +74,7 @@
           <h5 class="header-about color">i'm a <span class="typed"></span></h5>
         </div>
         <span class="header__scroll-icon"
-          ><img src="/images/arrow-downwards.svg"
+          ><img src="/public/images/arrow-downwards.svg"
         /></span>
       </header>
       <main>
@@ -85,7 +85,7 @@
               <p>ABOUT ME</p>
               <h3 class="about-me-subhead">Creative Web Developer</h3>
               <div class="sm-image">
-                <img src="/images/dev.jpeg" alt="zack" />
+                <img src="/public/images/dev.jpeg" alt="zack" />
               </div>
               <p class="about-me-text">
                 <span style="font-family: 'Gunslinger',sans-serif; letter-spacing: .7px;">CREATIVE APPROACH IS MY SIGNATURE !</span><br /><br />
@@ -121,7 +121,7 @@
               </a>
             </div>
             <div class="about-me__image slide-out-left">
-              <img src="/images/myself.png" alt="" />
+              <img src="/public/images/myself.png" alt="" />
             </div>
           </div>
           <p class="goals-text">my goals</p>
@@ -275,7 +275,7 @@
                     <div class="img-bg"></div>
                     <img
                       src="https://imgur.com/bT2rwmv.png"
-                      alt="Brohm Lake"
+                      alt="Covid app"
                     />
                     <figcaption>Covid Tracker</figcaption>
                   </figure>
@@ -420,7 +420,7 @@
                   ><i class="fa fa-facebook"></i
                 ></a>
                 <a
-                  href="https://www.linkedin.com/in/zacky-aduoli-b5047a176/"
+                  href="https://www.linkedin.com/in/zacky-aduoli"
                   target="_blank"
                   class="social-link"
                   ><i class="fa fa-linkedin"></i
@@ -444,20 +444,20 @@
           <nav class="nav">
             <ul>
               <span
-                ><span>Zack</span><img src="./images/arrow-right.svg"
+                ><span class="hide">Zack</span><img src="/public/images/arrow-right.svg"
               /></span>
               <li>
                 <i class="fa fa-home" aria-hidden="true"></i><span>Home</span>
               </li>
               <li>
-                <i class="fa fa-user" aria-hidden="true"></i><span>About</span>
+                <i class="fa fa-address-book-o" aria-hidden="true"></i><span>About</span>
               </li>
               <li>
-                <i class="fa fa-tasks" aria-hidden="true"></i
+                <i class="fa fa-code" aria-hidden="true"></i
                 ><span>Projects</span>
               </li>
               <li>
-                <i class="fa fa-envelope" aria-hidden="true"></i
+                <i class="fa fa-envelope-o" aria-hidden="true"></i
                 ><span>Contact</span>
               </li>
             </ul>
@@ -466,9 +466,9 @@
       </main>
     </div>
 
-    <script src="/scripts/script.js"></script>
-    <script src="/scripts/formcontrol.js"></script>
-    <script src="/scripts/particles.js" defer></script>
-    <script src="/scripts/typedjs.js" defer></script>
+    <script src="/public/scripts/script.js"></script>
+    <script src="/public/scripts/formcontrol.js"></script>
+    <script src="/public/scripts/particles.js" defer></script>
+    <script src="/public/scripts/typedjs.js" defer></script>
   </body>
 </html>
