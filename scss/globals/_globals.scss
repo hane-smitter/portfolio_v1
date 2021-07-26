@@ -1,0 +1,66 @@
+//section tile
+.section-big-title {
+    font-size: $big-title;
+    text-align: center;
+    font-weight: $h1_fw;
+    text-transform: uppercase;
+    font-family: arial;
+
+    &  span {
+        position: relative;
+    }
+    
+    &  span::after {
+        content: '';
+        top: 100%;
+        height: 3px;
+        font-family: arial;
+        width: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        background: $title-color;
+        position: absolute;
+    }
+    &  span.color {
+        color: #45f3ff;
+    }
+    &  span.color::after {
+        background-color: #45f3ff;
+    }
+}
+
+.container {
+    height: $viewPortHeight;
+    min-width: $viewPortWidth;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+    z-index: 10;
+}
+
+.dock-bottom {
+    position: fixed;
+    left: 0;
+    z-index: 7;
+    bottom: 0;
+    visibility: visible;
+}
+
+main {
+    width: 100%;
+    min-height: $viewPortHeight;
+    background: #fff;
+    position: relative;
+
+}
+
+.main__content {
+    --text-padding-left: 15px;
+
+    padding-left: 5rem;
+    line-height: 1.5;
+    min-height: $viewPortHeight;
+
+}
