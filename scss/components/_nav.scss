@@ -5,6 +5,8 @@
     background-color: $nav-tray-color;
     z-index: -7;
     visibility: hidden;
+    display: grid;
+    align-items: center;
 
     & ul {
         display: grid;

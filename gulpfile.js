@@ -36,5 +36,5 @@ const watchAll = () => {
 exports.bundleSass = bundleSass;
 exports.watchSass = watchSass;
 exports.watchAll = watchAll;
-exports.clearStyles = cleanStyle;
+exports.clearStyle = cleanStyle;
 exports.default = series(bundleSass, syncBrowser, watchAll);

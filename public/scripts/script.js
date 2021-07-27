@@ -99,8 +99,8 @@ for(const[index, icon] of smallScreenNavIcons.entries()){
 //checking whether screen is below 650px or above 650px
 onload = () => {
     navTrayWidth = (viewPortWidth * 0.3);
-    if(window.innerWidth > 650) {
-        atLargeScreen();
+    if(matchMedia(`(min-width: 650px)`).matches) {
+        atLargeScreen(); 
     } else {
         atSmallScreen();
     }
@@ -108,6 +108,18 @@ onload = () => {
         liItem.style.width = navTrayWidth + "px";
     });
 }
+
+//js media query
+matchMedia(`(min-width: 650px)`).addEventListener("change", determineScreenSizeActions);
+
+function determineScreenSizeActions(event) {
+    if(event.matches) {
+        atLargeScreen();
+    } else {
+        atSmallScreen();
+    }
+}
+
 //also check when resizing
 onresize = () => {
     viewPortHeight = window.innerHeight;
@@ -118,11 +130,7 @@ onresize = () => {
     arrowDownIconSiblingHeight = getComputedStyle(arrowDownIconSibling).height.replace('px', '');
     align();
 
-    if(viewPortWidth > 650) {
-        atLargeScreen();
-    }else {
-        atSmallScreen();
-    }
+
     navIconsLiContainer.forEach((liItem) => {
         liItem.style.width = navTrayWidth + "px";
     });
@@ -164,7 +172,7 @@ function onMouseLeaveNavTray() {
 
 //navTray checks
 function ifRemoveHoverOnNavTray() {
-    if(viewPortWidth <= 768) {
+    if(matchMedia(`(max-width: 768px)`).matches) {
         navTrayUl.removeEventListener('mouseover', onMouseOverNavTray);
         navTrayUl.removeEventListener('mouseleave', onMouseLeaveNavTray);
     } else {

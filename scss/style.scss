@@ -1,26 +1,21 @@
+/* 
+author: zacky aduoli
+website: https://lookupzach.netlify.app
+*/
+
+//variables
 @import "variables";
-
+//styles reset
 @import "reset";
-
+//global styles
 @import "globals/globals";
-
-@import "components/nav";
-
-@import 'components/header';
-
-@import "components/sections";
-
-
-.p5Canvas {
-    position: absolute;
-    top: 0;
-    z-index: -10;
-}
-
-
-
-// utils
+// utility classes
 @import "globals/utils";
-
+//navigation
+@import "components/nav";
+//header
+@import 'components/header';
+//page sections styles
+@import "components/sections";
 //responsive design
 @import "responsive";
