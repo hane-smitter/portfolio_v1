@@ -1,0 +1,260 @@
+@use "../../variables" as *;
+
+.section-one {
+    .goals {
+        min-height: 300px;
+        margin-bottom: 20px;
+    
+        .background {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            border-radius: 5px;
+            background: #f8faff;
+            padding-bottom: 30px;
+        
+            & .content {
+                width: 30%;
+                min-width: 140px;
+                max-width: 240px;
+                min-height: 80px;
+                padding: 7px;
+                background: #f8faff;
+                display: flex;
+                flex-direction: column;
+            }
+            & .content.section1 {
+                flex-grow: 1;
+            }& .content.section2 {
+                max-width: 270px;
+                flex-grow: 1.2;
+            }& .content.section3 {
+                flex-grow: 1;
+            }
+        
+            & .banner {
+                min-height: 80px;
+                max-height: 100px;
+                width: 100%;
+                background: transparent;
+                display: grid;
+                place-items: center;
+                align-items: center;
+                justify-items: center;
+            }
+            
+            & .content .info {
+                text-align: center;
+            }
+        
+            & .info-title {
+                color: $title-color;
+                text-transform: uppercase;
+                font-family: "Booter - Zero Zero", sans-serif;
+                letter-spacing: 3px;
+                font-size: 2.6rem;
+                background: linear-gradient(to right, $primary-color 0%, $primary-color2 51%, $primary-color 100%);
+                font-weight: $h2_fw;
+                color: transparent;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                -webkit-background-clip: text;
+            }
+        
+            & .content .info-text {
+                margin: auto 0;
+            }
+        }
+    }
+
+    &-about {
+        font-size: $big-title;
+        text-align: center;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-family: sans-serif;
+    
+        &  span {
+            position: relative;
+        }
+        
+        &  span::after {
+            content: '';
+            top: 100%;
+            height: 3px;
+            font-family: arial;
+            width: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            background: $title-color;
+            position: absolute;
+        }
+    }
+
+    .about-me {
+        min-height: 800px;
+        background: url(../images/about-banner.png) no-repeat top center;
+        background-position: center;
+        background-size: cover;
+        box-shadow: inset 0 5px 2px rgba(0, 0, 0, .2);
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        div.about-me__info {
+            .sm-image {
+                width: 200px;
+                margin-bottom: 10px;
+                display: none;
+                img {
+                    width: 100%;
+                    border-radius: 0 40px 0 40px;
+                    filter: drop-shadow(-1px 7px 20px rgba(5,54,77,0.24));
+                }
+            }
+
+            max-width: 600px;
+            width: 50%;
+            min-width: 500px;
+            padding-left: var(--text-padding-left);
+            padding-top: 150px;
+            margin-bottom: 20px;
+            @media screen and (max-width: 970px){
+                width: unset;
+                min-width: unset;
+                padding-top: 100px;
+            }
+            
+            & p:first-child {
+                letter-spacing: 2px;
+            }
+
+            .about-me-subhead {
+                font-family: sans-serif, Arial, Helvetica;
+                font-size: 3rem;
+                color: $title-color;
+                margin-bottom: 10px;
+            }
+            .about-me-text {
+                margin-bottom: 50px;
+            }
+            .ul {
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin-bottom: 20px;
+            }
+            ul.about-me-text {
+                color: $text-color;
+                font-size: 1.3rem;
+                font-family: Arial, Helvetica, sans-serif;
+
+                li {
+                    font-size: 1.2rem;
+                    list-style-image: url(/public/images/check.svg);
+                    list-style-position: inside;
+                }
+            }
+            .work-together-link {
+                text-decoration: none;
+                font-size: 16px;
+                @media (max-width: 500px) {
+                    font-size: 15px;
+                }
+                background: linear-gradient(to right, $primary-color 0%, $primary-color2 51%, $primary-color 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                outline: 2px solid;
+                padding: 3px 10px;
+            }
+            .work-together-link:hover {
+                background-position-x: -100px;
+            }
+            
+        }
+        .about-me__image {
+            --height: 500px;
+            --circle-height: calc(var(--height) - 30%);
+
+            min-height: 500px;
+            max-width: 400px;
+            width: 40%;
+            height: var(--height);
+            margin-left: auto;
+            align-self: center;
+            transition: $lazyLoad-speed;
+
+            .box {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                border-bottom-left-radius: 34%;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: var(--circle-height);
+                    background-color: none;
+                    border-radius: 50%;
+                    z-index: 1;
+                    box-shadow: 0 100px 0 40px rgba(82, 79, 214);
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: var(--circle-height);
+                    border: 5px solid transparent;
+                    border-bottom: 5px solid $title-color;
+                    border-radius: 50%;
+                }
+
+                .circle {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: var(--circle-height);
+                    background-color: $primary-color2;
+                    border: 5px solid $title-color;
+                    border-radius: 50%;
+                    overflow: hidden;
+                }
+                .circle img,
+                img {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    height: var(--height);
+                }
+            }
+        } 
+        /* .about-me__image img {
+            width: 100%;
+            height: auto;
+            // transform: scale(1.3);
+        } */
+    }
+    .goals-text {
+        padding-left: var(--text-padding-left);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: $text-color;
+        letter-spacing: 2px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+}
