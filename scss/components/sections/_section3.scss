@@ -1,7 +1,7 @@
 @use "../../variables" as *;
 
 .section-three {
-    background-color:rgb(28,39,43);
+    background-color: $contact-bg-color;
     display: flex;
     flex-flow: column nowrap;
     padding-right: 0;
@@ -118,92 +118,4 @@
         }
     }
 
-    &__footer {
-        display: grid;
-        place-items: center;
-        align-items: center;
-        justify-items: center;
-        margin-top: auto;
-        height: 200px;
-        perspective: 500px;
-        perspective-origin: 50%;
-
-        & .social {
-            width: 200px;
-            height: 80px;
-            position: relative;
-            transition: transform 250ms linear;
-            transform-style: preserve-3d;
-            cursor: pointer;
-        }
-        & .social:hover {
-            transform: rotateY(-90deg);
-        }
-        & .front,.right {
-            background-color: rgba(255, 238, 255, 0.84);
-            width: 100%;
-            height: 100%;
-            border-radius: 1px;
-            position: absolute;
-            backface-visibility: hidden;
-        }
-        & .front {
-            display: grid;
-            place-items: center;
-            align-items: center;
-            justify-items: center;
-            color: #333;
-            font-size: 20px;
-            font-family: sans-serif;
-            transform: translateZ(100px);
-        }
-        & .right {
-            display: grid;
-            grid-auto-flow: column;
-            place-items: center;
-            align-items: center;
-            justify-items: center;
-            transform: rotateY(-270deg) translateX(100px);
-            transform-origin: right;
-        }
-        & .social-link {
-            display: grid;
-            place-items: center;
-            align-items: center;
-            justify-items: center;
-            width: 40px;
-            height: 40px;
-            padding: 2px;
-            transition: scale 500ms ease-in-out;
-            font-size: 16px;
-            text-decoration: none;
-            background: #fff;
-            border-radius: 50%;
-            box-shadow: 0 3px 14px #666c752e;
-            color: #5b6880;
-        }
-        /* & .social-link:nth-child(1) {
-            background-color: #22acfe;
-        }
-        & .social-link:nth-child(2) {
-            background-color: #3f68c0;
-        }
-        & .social-link:nth-child(3) {
-            background-color: #0072b1;
-        } */
-        & .social-link:hover {
-            transform: scale(1.15);
-        }
-        & .footer-text {
-            font-size: 0.93rem;
-            color: #fefe;
-            align-self: start;
-        }
-
-
-        & .footer-text span {
-            font-family: arial;
-            color: #8e44ad;
-        }
-    }
 }

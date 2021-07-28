@@ -1153,13 +1153,17 @@ main {
   transform: scale(0.9);
 }
 
-.section-three__footer {
+.section-four {
+  background: linear-gradient(180deg, #1c272b, #EFEFEF 5%);
+  padding-top: 40px;
+}
+.section-four__footer {
   display: grid;
   place-items: center;
   align-items: center;
   justify-items: center;
   margin-top: auto;
-  height: 200px;
+  height: 150px;
   perspective: 500px;
   perspective-origin: 50%;
   /* & .social-link:nth-child(1) {
@@ -1172,8 +1176,7 @@ main {
       background-color: #0072b1;
   } */
 }
-
-.section-three__footer .social {
+.section-four__footer .social {
   width: 200px;
   height: 80px;
   position: relative;
@@ -1181,21 +1184,19 @@ main {
   transform-style: preserve-3d;
   cursor: pointer;
 }
-
-.section-three__footer .social:hover {
+.section-four__footer .social:hover {
   transform: rotateY(-90deg);
 }
-
-.section-three__footer .front, .section-three__footer .right {
-  background-color: rgba(255, 238, 255, 0.84);
+.section-four__footer .front, .section-four__footer .right {
+  background-color: #bdbdc054;
   width: 100%;
   height: 100%;
   border-radius: 1px;
+  border: 1px solid rgba(200, 200, 200, 0.9);
   position: absolute;
   backface-visibility: hidden;
 }
-
-.section-three__footer .front {
+.section-four__footer .front {
   display: grid;
   place-items: center;
   align-items: center;
@@ -1205,8 +1206,7 @@ main {
   font-family: sans-serif;
   transform: translateZ(100px);
 }
-
-.section-three__footer .right {
+.section-four__footer .right {
   display: grid;
   grid-auto-flow: column;
   place-items: center;
@@ -1215,8 +1215,7 @@ main {
   transform: rotateY(-270deg) translateX(100px);
   transform-origin: right;
 }
-
-.section-three__footer .social-link {
+.section-four__footer .social-link {
   display: grid;
   place-items: center;
   align-items: center;
@@ -1232,20 +1231,17 @@ main {
   box-shadow: 0 3px 14px #666c752e;
   color: #5b6880;
 }
-
-.section-three__footer .social-link:hover {
+.section-four__footer .social-link:hover {
   transform: scale(1.15);
 }
-
-.section-three__footer .footer-text {
+.section-four__footer .footer-text {
   font-size: 0.93rem;
-  color: #fefe;
+  color: #333;
   align-self: start;
 }
-
-.section-three__footer .footer-text span {
+.section-four__footer .footer-text span {
   font-family: arial;
-  color: #8e44ad;
+  color: #1345e6;
 }
 
 @media only screen and (max-width: 970px) {
