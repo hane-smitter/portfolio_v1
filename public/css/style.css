@@ -1281,8 +1281,8 @@ main {
     padding-left: 10px;
   }
 
-  .section-three .section-three__footer {
-    margin-bottom: 4.1rem;
+  .section-four {
+    padding-bottom: 5rem;
   }
 }
 @media only screen and (max-width: 576px) {

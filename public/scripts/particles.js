@@ -2,7 +2,7 @@ const particles = [];
 let z;
 //canvas height should match header height
 let home = document.querySelector('#home');
-let canvasHeight = parseFloat(getComputedStyle(home).width.replace('px', ''));
+let canvasHeight = home.clientHeight;
 
 function setup() {
   createCanvas(windowWidth, canvasHeight).parent('canvas-parent');
@@ -21,7 +21,7 @@ function draw() {
   }
 }
 function windowResized() {
-  canvasHeight = parseFloat(getComputedStyle(home).width.replace('px', ''));
+  canvasHeight = home.clientHeight;
   resizeCanvas(windowWidth, canvasHeight);
 }
 class Particle {
