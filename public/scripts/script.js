@@ -139,15 +139,17 @@ onresize = () => {
 }
 
 //setting the width of navigation tray when hovered
-let navTrayTextHeadTimeoutID;
+let navTrayTextHead_RAnimeID;
 function onMouseOverNavTray() {
     const navTrayTextHead = navTraySpanLogo.querySelector('span');
     navTray.style.width = navTrayWidth + 'px';
-    requestAnimationFrame(function() {
-        clearTimeout(navTrayTextHeadTimeoutID);
-        navTrayTextHeadTimeoutID = setTimeout(function() {
+    if(navTrayTextHead_RAnimeID !== '')
+        cancelAnimationFrame(navTrayTextHead_RAnimeID);
+    navTrayTextHead_RAnimeID = requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
             navTrayTextHead.classList.remove('hide');
-        }, 500);
+        });
+        
     });
     getComputedStyle(navTray).width;
     navTrayNav.style.width = '100%';
@@ -158,10 +160,14 @@ function onMouseOverNavTray() {
 function onMouseLeaveNavTray() {
     const navTrayTextHead = navTraySpanLogo.querySelector('span');
     navTray.style.width = '5rem';
-    clearTimeout(navTrayTextHeadTimeoutID);
-    navTrayTextHeadTimeoutID = setTimeout(function() {
+    if(navTrayTextHead_RAnimeID !== '')
+        cancelAnimationFrame(navTrayTextHead_RAnimeID);
+    navTrayTextHead_RAnimeID = requestAnimationFrame(function () {
         navTrayTextHead.classList.add('hide');
-    }, 700);
+    });
+    /* navTrayTextHead_RAnimeID = setTimeout(function() {
+        navTrayTextHead.classList.add('hide');
+    }, 700); */
     getComputedStyle(navTray).width;
     navTrayNav.style.width = '100%';
     navTrayUl.style.width = '100%';
